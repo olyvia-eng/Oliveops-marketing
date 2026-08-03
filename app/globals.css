@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+
+  /* OliveOps brand colors — olive/sage accent */
+  --color-olive-50: #f6f7f0;
+  --color-olive-100: #e8ecda;
+  --color-olive-200: #d2dab7;
+  --color-olive-300: #b5c28d;
+  --color-olive-400: #97aa66;
+  --color-olive-500: #7a9148;
+  --color-olive-600: #5f7338;
+  --color-olive-700: #4a5a2c;
+  --color-olive-800: #3a4623;
+  --color-olive-900: #2e3820;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
