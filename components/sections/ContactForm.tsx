@@ -176,7 +176,7 @@ export default function ContactForm() {
         type="submit"
         className="w-full bg-[#6B8E23] hover:bg-[#5A7620] text-white font-semibold py-3 rounded-lg transition-colors"
       >
-        Request a Demo
+        Request Beta
       </button>
 
       <p className="text-[#64748B] text-xs text-center dark:text-[#CBD5E1]">

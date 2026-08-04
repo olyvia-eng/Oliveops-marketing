@@ -151,7 +151,7 @@ export default function FeaturesPage() {
             subtext="Book a personalized demo and we'll walk you through how OliveOps fits your operation."
           />
           <Button href="/contact" size="lg">
-            Request a Demo
+            Request Beta
           </Button>
         </div>
       </section>

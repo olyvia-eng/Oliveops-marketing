@@ -34,7 +34,7 @@ const plans = [
       "Document management",
       "Priority support",
     ],
-    cta: "Request Demo",
+    cta: "Request Beta",
     highlighted: true,
   },
   {
@@ -69,7 +69,7 @@ const faqs = [
   },
   {
     q: "Do you offer a free trial?",
-    a: "Beta users get access to the full platform. Request a demo and we'll get you set up at no cost during the beta period.",
+    a: "Beta users get access to the full platform. Request beta access and we'll get you set up at no cost during the beta period.",
   },
 ];
 

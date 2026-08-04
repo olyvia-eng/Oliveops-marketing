@@ -51,8 +51,8 @@ export default function Navbar() {
             >
               Log in
             </a>
-            <Button href="/contact" size="sm">
-              Request Demo
+            <Button href="/beta" size="sm">
+              Request Beta
             </Button>
           </div>
 
@@ -96,8 +96,8 @@ export default function Navbar() {
           >
             Log in
           </a>
-          <Button href="/contact" size="sm" className="w-full justify-center">
-            Request Demo
+          <Button href="/beta" size="sm" className="w-full justify-center">
+            Request Beta
           </Button>
         </div>
       )}

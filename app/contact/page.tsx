@@ -66,7 +66,7 @@ export default function ContactPage() {
             {/* Right: form */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm p-8 dark:bg-[#1E293B] dark:border-[#334155]">
               <h2 className="text-xl font-bold text-slate-900 mb-6">
-                Request a demo or join beta
+                Request beta access or join the program
               </h2>
               <ContactForm />
             </div>
