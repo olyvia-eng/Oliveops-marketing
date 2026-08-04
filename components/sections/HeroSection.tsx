@@ -28,7 +28,7 @@ export default function HeroSection() {
             <Button href="/contact" size="lg">
               Request a Demo
             </Button>
-            <Button href="/contact" size="lg" variant="outline" className="border-[#06B6D4] text-white hover:bg-[#06B6D4]/10 hover:border-[#06B6D4]">
+            <Button href="/beta" size="lg" variant="outline" className="border-[#06B6D4] text-white hover:bg-[#06B6D4]/10 hover:border-[#06B6D4]">
               Join Beta
             </Button>
           </div>
