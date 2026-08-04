@@ -8,7 +8,7 @@ const footerLinks = {
   ],
   Company: [
     { label: "Contact", href: "/contact" },
-    { label: "Log in", href: "https://app.oliveops.com", external: true },
+    { label: "Log in", href: "https://app.oliveops.ca", external: true },
   ],
   Industries: [
     { label: "Excavation", href: "/features" },

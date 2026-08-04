@@ -6,5 +6,5 @@ export const metadata: Metadata = {
 };
 
 export default function LoginPage() {
-  redirect("https://app.oliveops.com");
+  redirect("https://app.oliveops.ca");
 }

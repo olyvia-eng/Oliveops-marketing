@@ -50,7 +50,7 @@ export default function HeroSection() {
                   <div className="w-3 h-3 rounded-full bg-slate-600" />
                 </div>
                 <div className="flex-1 mx-4 bg-[#111827] rounded-md px-3 py-1 text-slate-400 text-xs">
-                  app.oliveops.com/dashboard
+                  app.oliveops.ca/dashboard
                 </div>
               </div>
 

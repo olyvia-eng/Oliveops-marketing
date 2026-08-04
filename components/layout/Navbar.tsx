@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
             <a
-              href="https://app.oliveops.com"
+              href="https://app.oliveops.ca"
               target="_blank"
               rel="noopener noreferrer"
               className="text-slate-600 hover:text-[#06B6D4] font-medium text-sm transition-colors"
@@ -88,7 +88,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a
-            href="https://app.oliveops.com"
+            href="https://app.oliveops.ca"
             target="_blank"
             rel="noopener noreferrer"
             className="block text-slate-600 font-medium py-2"
