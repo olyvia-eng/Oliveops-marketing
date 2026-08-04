@@ -47,14 +47,14 @@ export default function IndustriesSection() {
           {industries.map((industry) => (
             <div
               key={industry.name}
-              className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#06B6D4]/40 transition-shadow flex gap-4"
+              className="bg-[#FFFFFF] rounded-xl p-6 border border-[#E2E8F0] shadow-sm hover:shadow-md hover:border-[#6B8E23]/40 transition-shadow flex gap-4 dark:bg-[#1E293B] dark:border-[#334155] dark:hover:border-[#84A83D]/40"
             >
               <div className="text-4xl flex-shrink-0">{industry.icon}</div>
               <div>
-                <h3 className="text-[#0F172A] font-semibold text-lg mb-1">
+                <h3 className="text-[#0F172A] font-semibold text-lg mb-1 dark:text-[#F8FAFC]">
                   {industry.name}
                 </h3>
-                <p className="text-slate-600 text-sm leading-relaxed">
+                <p className="text-[#64748B] text-sm leading-relaxed dark:text-[#CBD5E1]">
                   {industry.description}
                 </p>
               </div>

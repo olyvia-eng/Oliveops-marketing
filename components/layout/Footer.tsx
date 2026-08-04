@@ -20,13 +20,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0F172A] text-slate-400">
+    <footer className="bg-[#0F172A] text-[#CBD5E1] dark:bg-[#0F172A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-[#06B6D4] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#6B8E23] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">O</span>
               </div>
               <span className="text-white font-bold text-lg tracking-tight">OliveOps</span>
@@ -50,14 +50,14 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm hover:text-[#06B6D4] transition-colors"
+                        className="text-sm hover:text-[#84A83D] transition-colors"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm hover:text-[#06B6D4] transition-colors"
+                        className="text-sm hover:text-[#84A83D] transition-colors"
                       >
                         {link.label}
                       </Link>

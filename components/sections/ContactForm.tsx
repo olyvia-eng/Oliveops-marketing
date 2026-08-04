@@ -38,8 +38,8 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-16">
-        <div className="w-16 h-16 bg-[#ecfeff] rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-[#06B6D4]" fill="currentColor" viewBox="0 0 20 20">
+        <div className="w-16 h-16 bg-[#EEF4E3] rounded-full flex items-center justify-center mx-auto mb-6 dark:bg-[#1E293B]">
+          <svg className="w-8 h-8 text-[#6B8E23] dark:text-[#84A83D]" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
         </div>
@@ -55,7 +55,7 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">
+          <label htmlFor="name" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
             Full name <span className="text-red-500">*</span>
           </label>
           <input
@@ -65,12 +65,12 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
+            className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="Jane Smith"
           />
         </div>
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">
+          <label htmlFor="email" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
             Email address <span className="text-red-500">*</span>
           </label>
           <input
@@ -80,7 +80,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
+            className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="jane@company.com"
           />
         </div>
@@ -88,7 +88,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="company" className="block text-sm font-medium text-slate-700 mb-1">
+          <label htmlFor="company" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
             Company name
           </label>
           <input
@@ -97,12 +97,12 @@ export default function ContactForm() {
             type="text"
             value={form.company}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
+            className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="Smith Excavating LLC"
           />
         </div>
         <div>
-          <label htmlFor="phone" className="block text-sm font-medium text-slate-700 mb-1">
+          <label htmlFor="phone" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
             Phone number
           </label>
           <input
@@ -111,7 +111,7 @@ export default function ContactForm() {
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
+            className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="(555) 123-4567"
           />
         </div>
@@ -119,7 +119,7 @@ export default function ContactForm() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="industry" className="block text-sm font-medium text-slate-700 mb-1">
+          <label htmlFor="industry" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
             Industry
           </label>
           <select
@@ -127,7 +127,7 @@ export default function ContactForm() {
             name="industry"
             value={form.industry}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
+            className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           >
             <option value="">Select industry</option>
             {industries.map((ind) => (
@@ -138,7 +138,7 @@ export default function ContactForm() {
           </select>
         </div>
         <div>
-          <label htmlFor="crewSize" className="block text-sm font-medium text-slate-700 mb-1">
+          <label htmlFor="crewSize" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
             Crew size
           </label>
           <select
@@ -146,7 +146,7 @@ export default function ContactForm() {
             name="crewSize"
             value={form.crewSize}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
+            className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           >
             <option value="">Select crew size</option>
             <option value="1-5">1–5 employees</option>
@@ -158,7 +158,7 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">
+        <label htmlFor="message" className="block text-sm font-medium text-[#0F172A] mb-1 dark:text-[#F8FAFC]">
           Tell us about your operation
         </label>
         <textarea
@@ -167,19 +167,19 @@ export default function ContactForm() {
           rows={4}
           value={form.message}
           onChange={handleChange}
-          className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent resize-none"
+          className="w-full border border-[#E2E8F0] rounded-lg bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:outline-none focus:ring-2 focus:ring-[#6B8E23] focus:border-transparent resize-none dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           placeholder="What are your biggest operational challenges? What are you hoping OliveOps can help with?"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white font-semibold py-3 rounded-lg transition-colors"
+        className="w-full bg-[#6B8E23] hover:bg-[#5A7620] text-white font-semibold py-3 rounded-lg transition-colors"
       >
         Request a Demo
       </button>
 
-      <p className="text-slate-500 text-xs text-center">
+      <p className="text-[#64748B] text-xs text-center dark:text-[#CBD5E1]">
         No spam, ever. We&apos;ll reach out within 1–2 business days.
       </p>
     </form>

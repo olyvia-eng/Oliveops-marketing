@@ -17,13 +17,13 @@ export default function ContactPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#0F172A]">
+      <section className="py-20 bg-gradient-to-br from-[#F8FAFC] via-[#FFFFFF] to-[#EEF4E3] dark:from-[#0F172A] dark:via-[#111827] dark:to-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#06B6D4] font-semibold text-sm uppercase tracking-widest mb-4">Get Started</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
+          <p className="text-[#6B8E23] dark:text-[#84A83D] font-semibold text-sm uppercase tracking-widest mb-4">Get Started</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6 dark:text-[#F8FAFC]">
             See OliveOps in action
           </h1>
-          <p className="text-slate-300 text-xl max-w-2xl mx-auto">
+          <p className="text-[#64748B] text-xl max-w-2xl mx-auto dark:text-[#CBD5E1]">
             Book a personalized demo or join the beta. We&apos;d love to learn about your operation.
           </p>
         </div>
@@ -51,11 +51,11 @@ export default function ContactPage() {
                 ))}
               </div>
 
-              <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
+              <div className="bg-[#FFFFFF] rounded-xl p-6 border border-[#E2E8F0] dark:bg-[#1E293B] dark:border-[#334155]">
                 <h3 className="font-semibold text-slate-900 mb-2">Already have questions?</h3>
                 <p className="text-slate-600 text-sm mb-3">
                   Reach us directly at{" "}
-                  <a href="mailto:hello@oliveops.com" className="text-[#06B6D4] hover:underline font-medium">
+                  <a href="mailto:hello@oliveops.com" className="text-[#6B8E23] hover:underline font-medium dark:text-[#84A83D]">
                     hello@oliveops.com
                   </a>
                 </p>
@@ -64,7 +64,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right: form */}
-            <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-8">
+            <div className="bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm p-8 dark:bg-[#1E293B] dark:border-[#334155]">
               <h2 className="text-xl font-bold text-slate-900 mb-6">
                 Request a demo or join beta
               </h2>

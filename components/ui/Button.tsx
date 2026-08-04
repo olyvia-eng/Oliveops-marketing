@@ -17,11 +17,11 @@ interface ButtonProps {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "bg-[#06B6D4] hover:bg-[#0891b2] text-white shadow-sm",
+    "bg-[#6B8E23] hover:bg-[#5A7620] text-white shadow-sm",
   secondary:
     "bg-[#0F172A] hover:bg-slate-800 text-white shadow-sm",
   outline:
-    "border border-[#0F172A] text-[#0F172A] hover:bg-[#ecfeff]",
+    "border border-[#E2E8F0] text-[#0F172A] hover:bg-[#EEF4E3] dark:border-[#334155] dark:text-[#F8FAFC] dark:hover:bg-[#1E293B]",
 };
 
 const sizeClasses: Record<Size, string> = {

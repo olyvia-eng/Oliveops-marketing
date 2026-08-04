@@ -72,10 +72,10 @@ export default function BetaWaitlistForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
+    <form onSubmit={handleSubmit} className="space-y-5 rounded-2xl border border-[#E2E8F0] bg-[#FFFFFF] p-8 shadow-sm dark:border-[#334155] dark:bg-[#1E293B]">
       <div className="grid gap-5 md:grid-cols-2">
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="name">
+          <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="name">
             Name
           </label>
           <input
@@ -83,14 +83,14 @@ export default function BetaWaitlistForm() {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+            className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="Jane Smith"
           />
           {errors.name && <p className="mt-1 text-sm text-red-600">{errors.name}</p>}
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="companyName">
+          <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="companyName">
             Company Name
           </label>
           <input
@@ -98,14 +98,14 @@ export default function BetaWaitlistForm() {
             name="companyName"
             value={formData.companyName}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+            className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="Smith Excavating"
           />
           {errors.companyName && <p className="mt-1 text-sm text-red-600">{errors.companyName}</p>}
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="email">
+          <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="email">
             Email
           </label>
           <input
@@ -114,14 +114,14 @@ export default function BetaWaitlistForm() {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+            className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="jane@company.com"
           />
           {errors.email && <p className="mt-1 text-sm text-red-600">{errors.email}</p>}
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="phone">
+          <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="phone">
             Phone (optional)
           </label>
           <input
@@ -129,13 +129,13 @@ export default function BetaWaitlistForm() {
             name="phone"
             value={formData.phone}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+            className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
             placeholder="(555) 123-4567"
           />
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="contractorType">
+          <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="contractorType">
             Contractor Type
           </label>
           <select
@@ -143,7 +143,7 @@ export default function BetaWaitlistForm() {
             name="contractorType"
             value={formData.contractorType}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+            className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           >
             <option value="">Select one</option>
             {contractorTypes.map((type) => (
@@ -156,7 +156,7 @@ export default function BetaWaitlistForm() {
         </div>
 
         <div>
-          <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="employeeCount">
+          <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="employeeCount">
             Number of Employees
           </label>
           <select
@@ -164,7 +164,7 @@ export default function BetaWaitlistForm() {
             name="employeeCount"
             value={formData.employeeCount}
             onChange={handleChange}
-            className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+            className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           >
             <option value="">Select one</option>
             {employeeOptions.map((count) => (
@@ -178,7 +178,7 @@ export default function BetaWaitlistForm() {
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="currentSoftware">
+        <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="currentSoftware">
           Current Estimating Method / Software
         </label>
         <input
@@ -186,14 +186,14 @@ export default function BetaWaitlistForm() {
           name="currentSoftware"
           value={formData.currentSoftware}
           onChange={handleChange}
-          className="w-full rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+          className="w-full rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           placeholder="Paper estimates, Excel, Jobber, etc."
         />
         {errors.currentSoftware && <p className="mt-1 text-sm text-red-600">{errors.currentSoftware}</p>}
       </div>
 
       <div>
-        <label className="mb-1 block text-sm font-medium text-slate-700" htmlFor="painPoint">
+        <label className="mb-1 block text-sm font-medium text-[#0F172A] dark:text-[#F8FAFC]" htmlFor="painPoint">
           Biggest Business Pain Point
         </label>
         <textarea
@@ -202,7 +202,7 @@ export default function BetaWaitlistForm() {
           rows={4}
           value={formData.painPoint}
           onChange={handleChange}
-          className="w-full resize-none rounded-lg border border-slate-300 px-4 py-2.5 text-slate-900 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#06B6D4]"
+          className="w-full resize-none rounded-lg border border-[#E2E8F0] bg-[#FFFFFF] px-4 py-2.5 text-[#0F172A] focus:border-transparent focus:outline-none focus:ring-2 focus:ring-[#6B8E23] dark:border-[#334155] dark:bg-[#1E293B] dark:text-[#F8FAFC]"
           placeholder="What is slowing your team down most right now?"
         />
         {errors.painPoint && <p className="mt-1 text-sm text-red-600">{errors.painPoint}</p>}
@@ -219,7 +219,7 @@ export default function BetaWaitlistForm() {
       <button
         type="submit"
         disabled={isSubmitting}
-        className="w-full rounded-lg bg-[#06B6D4] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#0891b2] disabled:cursor-not-allowed disabled:opacity-70"
+        className="w-full rounded-lg bg-[#6B8E23] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#5A7620] disabled:cursor-not-allowed disabled:opacity-70"
       >
         {isSubmitting ? "Submitting..." : "Join Beta Waitlist"}
       </button>

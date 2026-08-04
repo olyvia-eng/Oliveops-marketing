@@ -53,13 +53,13 @@ export default function FeaturesSection() {
           {features.map((feature) => (
             <div
               key={feature.title}
-              className="group bg-slate-50 rounded-xl p-6 border border-slate-200 hover:border-[#06B6D4] hover:bg-[#ecfeff] transition-all"
+              className="group bg-[#FFFFFF] rounded-xl p-6 border border-[#E2E8F0] hover:border-[#6B8E23] hover:bg-[#EEF4E3] transition-all dark:bg-[#1E293B] dark:border-[#334155] dark:hover:bg-[#334155]"
             >
               <div className="text-3xl mb-4">{feature.icon}</div>
-              <h3 className="text-[#0F172A] font-semibold text-lg mb-2">
+              <h3 className="text-[#0F172A] font-semibold text-lg mb-2 dark:text-[#F8FAFC]">
                 {feature.title}
               </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-[#64748B] text-sm leading-relaxed dark:text-[#CBD5E1]">
                 {feature.description}
               </p>
             </div>
