@@ -24,7 +24,7 @@ export interface BetaWaitlistEmailPayload {
 }
 
 export async function sendBetaWaitlistNotification(payload: BetaWaitlistEmailPayload) {
-  const toAddress = process.env.BETA_WAITLIST_NOTIFICATION_EMAIL || "olivia@landcorexcavating.ca";
+  const toAddress = process.env.BETA_WAITLIST_NOTIFICATION_EMAIL || "olyvia@landcorexcavating.ca";
   const fromAddress = process.env.BETA_WAITLIST_FROM_EMAIL;
 
   if (!fromAddress) {
