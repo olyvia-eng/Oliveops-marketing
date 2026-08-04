@@ -41,13 +41,13 @@ export default function ProblemsSection() {
           {problems.map((problem) => (
             <div
               key={problem.title}
-              className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-xl p-6 border border-slate-200 shadow-sm hover:shadow-md hover:border-[#06B6D4]/40 transition-shadow"
             >
               <div className="text-3xl mb-4">{problem.icon}</div>
-              <h3 className="text-slate-900 font-semibold text-lg mb-2">
+              <h3 className="text-[#0F172A] font-semibold text-lg mb-2">
                 {problem.title}
               </h3>
-              <p className="text-slate-500 text-sm leading-relaxed">
+              <p className="text-slate-600 text-sm leading-relaxed">
                 {problem.description}
               </p>
             </div>

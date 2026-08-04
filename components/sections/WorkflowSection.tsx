@@ -12,7 +12,7 @@ const steps = [
 
 export default function WorkflowSection() {
   return (
-    <section className="py-24 bg-slate-900">
+    <section className="py-24 bg-[#0F172A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeader
           eyebrow="End-to-end workflow"
@@ -23,22 +23,22 @@ export default function WorkflowSection() {
         {/* Workflow steps */}
         <div className="relative">
           {/* Connecting line (desktop) */}
-          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-olive-600/20 via-olive-500/60 to-olive-600/20" />
+          <div className="hidden lg:block absolute top-10 left-0 right-0 h-0.5 bg-gradient-to-r from-[#06B6D4]/20 via-[#06B6D4]/60 to-[#06B6D4]/20" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-7 gap-4">
             {steps.map((step, index) => (
               <div key={step.label} className="relative flex flex-col items-center text-center">
                 {/* Step number bubble */}
-                <div className="relative z-10 w-20 h-20 rounded-2xl bg-slate-800 border-2 border-olive-600 flex flex-col items-center justify-center mb-3 shadow-lg">
-                  <span className="text-olive-400 font-bold text-lg leading-none">{step.label.charAt(0)}</span>
-                  <span className="text-slate-500 text-xs mt-0.5">{index + 1}</span>
+                <div className="relative z-10 w-20 h-20 rounded-2xl bg-slate-900 border-2 border-[#06B6D4] flex flex-col items-center justify-center mb-3 shadow-lg">
+                  <span className="text-[#06B6D4] font-bold text-lg leading-none">{step.label.charAt(0)}</span>
+                  <span className="text-slate-400 text-xs mt-0.5">{index + 1}</span>
                 </div>
                 <h4 className="text-white font-semibold text-sm mb-1">{step.label}</h4>
                 <p className="text-slate-400 text-xs leading-relaxed">{step.description}</p>
 
                 {/* Arrow (desktop) */}
                 {index < steps.length - 1 && (
-                  <div className="hidden lg:block absolute top-10 -right-2 z-20 text-olive-500 text-lg font-bold">
+                  <div className="hidden lg:block absolute top-10 -right-2 z-20 text-[#06B6D4] text-lg font-bold">
                     →
                   </div>
                 )}

@@ -77,9 +77,9 @@ export default function PricingPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-olive-400 font-semibold text-sm uppercase tracking-widest mb-4">Pricing</p>
+          <p className="text-[#06B6D4] font-semibold text-sm uppercase tracking-widest mb-4">Pricing</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             Simple pricing that scales with you
           </h1>
@@ -98,13 +98,13 @@ export default function PricingPage() {
                 key={plan.name}
                 className={`rounded-2xl p-8 border flex flex-col ${
                   plan.highlighted
-                    ? "border-olive-500 bg-olive-50 shadow-xl ring-1 ring-olive-500"
+                    ? "border-[#06B6D4] bg-[#ecfeff] shadow-xl ring-1 ring-[#06B6D4]"
                     : "border-slate-200 bg-white shadow-sm"
                 }`}
               >
                 {plan.highlighted && (
                   <div className="text-center mb-4">
-                    <span className="bg-olive-600 text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
+                    <span className="bg-[#06B6D4] text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full">
                       Most Popular
                     </span>
                   </div>
@@ -115,8 +115,8 @@ export default function PricingPage() {
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((feature) => (
                     <li key={feature} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-olive-100 flex items-center justify-center flex-shrink-0">
-                        <svg className="w-3 h-3 text-olive-600" fill="currentColor" viewBox="0 0 20 20">
+                      <div className="w-5 h-5 rounded-full bg-[#ecfeff] flex items-center justify-center flex-shrink-0">
+                        <svg className="w-3 h-3 text-[#06B6D4]" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                         </svg>
                       </div>

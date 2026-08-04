@@ -17,9 +17,9 @@ export default function ContactPage() {
   return (
     <div className="pt-16">
       {/* Header */}
-      <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+      <section className="py-20 bg-gradient-to-br from-[#0F172A] via-[#111827] to-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-olive-400 font-semibold text-sm uppercase tracking-widest mb-4">Get Started</p>
+          <p className="text-[#06B6D4] font-semibold text-sm uppercase tracking-widest mb-4">Get Started</p>
           <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
             See OliveOps in action
           </h1>
@@ -53,13 +53,13 @@ export default function ContactPage() {
 
               <div className="bg-slate-50 rounded-xl p-6 border border-slate-200">
                 <h3 className="font-semibold text-slate-900 mb-2">Already have questions?</h3>
-                <p className="text-slate-500 text-sm mb-3">
+                <p className="text-slate-600 text-sm mb-3">
                   Reach us directly at{" "}
-                  <a href="mailto:hello@oliveops.com" className="text-olive-600 hover:underline font-medium">
+                  <a href="mailto:hello@oliveops.com" className="text-[#06B6D4] hover:underline font-medium">
                     hello@oliveops.com
                   </a>
                 </p>
-                <p className="text-slate-400 text-xs">We respond within 1–2 business days.</p>
+                <p className="text-slate-500 text-xs">We respond within 1–2 business days.</p>
               </div>
             </div>
 

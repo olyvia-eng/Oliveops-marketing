@@ -20,13 +20,13 @@ const footerLinks = {
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400">
+    <footer className="bg-[#0F172A] text-slate-400">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-olive-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-[#06B6D4] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">O</span>
               </div>
               <span className="text-white font-bold text-lg tracking-tight">OliveOps</span>
@@ -50,14 +50,14 @@ export default function Footer() {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-sm hover:text-white transition-colors"
+                        className="text-sm hover:text-[#06B6D4] transition-colors"
                       >
                         {link.label}
                       </a>
                     ) : (
                       <Link
                         href={link.href}
-                        className="text-sm hover:text-white transition-colors"
+                        className="text-sm hover:text-[#06B6D4] transition-colors"
                       >
                         {link.label}
                       </Link>
@@ -69,7 +69,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm">
             &copy; {new Date().getFullYear()} OliveOps. All rights reserved.
           </p>

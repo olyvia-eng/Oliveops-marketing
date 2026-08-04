@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0F172A;
 }
 
 @theme inline {
@@ -11,17 +11,17 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 
-  /* OliveOps brand colors — olive/sage accent */
-  --color-olive-50: #f6f7f0;
-  --color-olive-100: #e8ecda;
-  --color-olive-200: #d2dab7;
-  --color-olive-300: #b5c28d;
-  --color-olive-400: #97aa66;
-  --color-olive-500: #7a9148;
-  --color-olive-600: #5f7338;
-  --color-olive-700: #4a5a2c;
-  --color-olive-800: #3a4623;
-  --color-olive-900: #2e3820;
+  /* OliveOps brand colors — midnight and cyan */
+  --color-olive-50: #ecfeff;
+  --color-olive-100: #cffafe;
+  --color-olive-200: #a5f3fc;
+  --color-olive-300: #67e8f9;
+  --color-olive-400: #22d3ee;
+  --color-olive-500: #06b6d4;
+  --color-olive-600: #0891b2;
+  --color-olive-700: #0e7490;
+  --color-olive-800: #155e75;
+  --color-olive-900: #164e63;
 }
 
 body {

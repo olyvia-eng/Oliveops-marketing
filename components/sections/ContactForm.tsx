@@ -38,13 +38,13 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-16">
-        <div className="w-16 h-16 bg-olive-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <svg className="w-8 h-8 text-olive-600" fill="currentColor" viewBox="0 0 20 20">
+        <div className="w-16 h-16 bg-[#ecfeff] rounded-full flex items-center justify-center mx-auto mb-6">
+          <svg className="w-8 h-8 text-[#06B6D4]" fill="currentColor" viewBox="0 0 20 20">
             <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
           </svg>
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 mb-3">You&apos;re on the list!</h3>
-        <p className="text-slate-500">
+        <h3 className="text-2xl font-bold text-[#0F172A] mb-3">You&apos;re on the list!</h3>
+        <p className="text-slate-600">
           Thanks for reaching out. We&apos;ll be in touch within 1–2 business days to schedule your demo.
         </p>
       </div>
@@ -65,7 +65,7 @@ export default function ContactForm() {
             required
             value={form.name}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
             placeholder="Jane Smith"
           />
         </div>
@@ -80,7 +80,7 @@ export default function ContactForm() {
             required
             value={form.email}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
             placeholder="jane@company.com"
           />
         </div>
@@ -97,7 +97,7 @@ export default function ContactForm() {
             type="text"
             value={form.company}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
             placeholder="Smith Excavating LLC"
           />
         </div>
@@ -111,7 +111,7 @@ export default function ContactForm() {
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
             placeholder="(555) 123-4567"
           />
         </div>
@@ -127,7 +127,7 @@ export default function ContactForm() {
             name="industry"
             value={form.industry}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
           >
             <option value="">Select industry</option>
             {industries.map((ind) => (
@@ -146,7 +146,7 @@ export default function ContactForm() {
             name="crewSize"
             value={form.crewSize}
             onChange={handleChange}
-            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent"
+            className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent"
           >
             <option value="">Select crew size</option>
             <option value="1-5">1–5 employees</option>
@@ -167,19 +167,19 @@ export default function ContactForm() {
           rows={4}
           value={form.message}
           onChange={handleChange}
-          className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-olive-500 focus:border-transparent resize-none"
+          className="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#06B6D4] focus:border-transparent resize-none"
           placeholder="What are your biggest operational challenges? What are you hoping OliveOps can help with?"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-olive-600 hover:bg-olive-700 text-white font-semibold py-3 rounded-lg transition-colors"
+        className="w-full bg-[#06B6D4] hover:bg-[#0891b2] text-white font-semibold py-3 rounded-lg transition-colors"
       >
         Request a Demo
       </button>
 
-      <p className="text-slate-400 text-xs text-center">
+      <p className="text-slate-500 text-xs text-center">
         No spam, ever. We&apos;ll reach out within 1–2 business days.
       </p>
     </form>
