@@ -35,79 +35,26 @@ export default function HeroSection() {
           </p>
         </div>
 
-        {/* Product mockup */}
+        {/* Product screenshot */}
         <div className="mt-16 relative">
           <div className="max-w-5xl mx-auto">
-            <div className="bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-2xl overflow-hidden dark:bg-[#111827] dark:border-[#334155]">
+            <div className="rounded-2xl border border-[#E2E8F0] shadow-2xl overflow-hidden dark:border-[#334155]">
               {/* Browser chrome */}
               <div className="bg-[#F8FAFC] px-4 py-3 flex items-center gap-2 border-b border-[#E2E8F0] dark:bg-[#0F172A] dark:border-[#334155]">
                 <div className="flex gap-1.5">
-                  <div className="w-3 h-3 rounded-full bg-slate-600" />
-                  <div className="w-3 h-3 rounded-full bg-slate-600" />
-                  <div className="w-3 h-3 rounded-full bg-slate-600" />
+                  <div className="w-3 h-3 rounded-full bg-slate-300" />
+                  <div className="w-3 h-3 rounded-full bg-slate-300" />
+                  <div className="w-3 h-3 rounded-full bg-slate-300" />
                 </div>
                 <div className="flex-1 mx-4 bg-[#EEF4E3] rounded-md px-3 py-1 text-[#64748B] text-xs dark:bg-[#111827] dark:text-[#CBD5E1]">
                   app.oliveops.ca/dashboard
                 </div>
               </div>
-
-              {/* Dashboard mockup */}
-              <div className="p-6 grid grid-cols-12 gap-4 min-h-[320px]">
-                {/* Sidebar */}
-                <div className="col-span-2 bg-[#F8FAFC] rounded-lg p-3 space-y-2 dark:bg-[#0F172A]">
-                  {["Dashboard", "Customers", "Jobs", "Estimates", "Schedule", "Employees"].map((item) => (
-                    <div
-                      key={item}
-                      className={`text-xs px-2 py-1.5 rounded ${item === "Dashboard" ? "bg-[#6B8E23] text-white" : "text-[#64748B] dark:text-[#CBD5E1]"}`}
-                    >
-                      {item}
-                    </div>
-                  ))}
-                </div>
-
-                {/* Main content */}
-                <div className="col-span-10 space-y-4">
-                  {/* Stats row */}
-                  <div className="grid grid-cols-4 gap-3">
-                    {[
-                      { label: "Active Jobs", value: "24" },
-                      { label: "Open Estimates", value: "12" },
-                      { label: "Customers", value: "187" },
-                      { label: "Revenue MTD", value: "$84k" },
-                    ].map((stat) => (
-                      <div key={stat.label} className="bg-[#FFFFFF] rounded-lg p-3 border border-[#E2E8F0] dark:bg-[#0F172A] dark:border-[#334155]">
-                        <p className="text-[#64748B] text-xs mb-1 dark:text-[#CBD5E1]">{stat.label}</p>
-                        <p className="text-[#0F172A] font-bold text-lg dark:text-[#F8FAFC]">{stat.value}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Content area */}
-                  <div className="grid grid-cols-2 gap-3">
-                    <div className="bg-[#0F172A] rounded-lg p-4">
-                      <p className="text-[#64748B] text-xs font-semibold mb-3 uppercase tracking-wide dark:text-[#CBD5E1]">Recent Jobs</p>
-                      <div className="space-y-2">
-                        {["Septic pump - Johnson Farm", "Excavation - Riverside Rd", "Snow removal - Commercial"].map((job) => (
-                          <div key={job} className="flex items-center gap-2">
-                            <div className="w-2 h-2 bg-[#6B8E23] rounded-full flex-shrink-0 dark:bg-[#84A83D]" />
-                            <span className="text-[#0F172A] text-xs truncate dark:text-[#F8FAFC]">{job}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="bg-[#0F172A] rounded-lg p-4">
-                      <p className="text-[#64748B] text-xs font-semibold mb-3 uppercase tracking-wide dark:text-[#CBD5E1]">Today&apos;s Schedule</p>
-                      <div className="space-y-2">
-                        {["8:00 AM - Crew A → Johnson Farm", "10:30 AM - Crew B → Riverside", "2:00 PM - Crew A → Downtown"].map((item) => (
-                          <div key={item} className="text-xs text-[#64748B] py-1 border-l-2 border-[#6B8E23] pl-2 dark:text-[#CBD5E1] dark:border-[#84A83D]">
-                            {item}
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img
+                src="/dashboard.jpg"
+                alt="OliveOps dashboard"
+                className="w-full block"
+              />
             </div>
           </div>
           {/* Glow */}
