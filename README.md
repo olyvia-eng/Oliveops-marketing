@@ -33,4 +33,30 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
+### Required environment variables
+
+In your Vercel project dashboard, add these Environment Variables:
+
+```env
+AWS_REGION=us-east-2
+AWS_ACCESS_KEY_ID=your_access_key_id
+AWS_SECRET_ACCESS_KEY=your_secret_access_key
+AWS_SESSION_TOKEN=your_session_token_if_needed
+BETA_WAITLIST_TABLE_NAME=OliveOps-betawaitlist
+```
+
+### IAM permissions
+
+Your AWS credentials must allow these DynamoDB actions for the table:
+
+- dynamodb:PutItem
+- dynamodb:Scan
+
+### Deploy steps
+
+1. Connect your GitHub repo to Vercel.
+2. Import the project and choose the root folder.
+3. Add the environment variables above.
+4. Deploy.
+
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.

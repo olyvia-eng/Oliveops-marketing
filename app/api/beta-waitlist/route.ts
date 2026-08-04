@@ -3,14 +3,15 @@ import { DynamoDBDocumentClient, PutCommand, ScanCommand } from "@aws-sdk/lib-dy
 import { NextRequest, NextResponse } from "next/server";
 import { createBetaWaitlistItem, validateBetaWaitlistInput } from "@/lib/betaWaitlist";
 
-const tableName = process.env.BETA_WAITLIST_TABLE_NAME || "OliveOps-BetaWaitlist";
+const tableName = process.env.BETA_WAITLIST_TABLE_NAME || "OliveOps-betawaitlist";
 
 const client = new DynamoDBClient({
-  region: process.env.AWS_REGION || "us-east-1",
+  region: process.env.AWS_REGION || "us-east-2",
   credentials: process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
     ? {
         accessKeyId: process.env.AWS_ACCESS_KEY_ID,
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
+        ...(process.env.AWS_SESSION_TOKEN ? { sessionToken: process.env.AWS_SESSION_TOKEN } : {}),
       }
     : undefined,
 });
