@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <!-- stem -->
+  <path d="M16 28 C16 28 14 20 10 14" stroke="#6B8E23" stroke-width="1.8" stroke-linecap="round"/>
+  <!-- main leaf -->
+  <path d="M10 6 C4 10 4 22 16 26 C16 26 28 18 22 8 C18 2 10 6 10 6Z" fill="#6B8E23"/>
+  <!-- highlight vein -->
+  <path d="M10 6 C13 14 16 20 16 26" stroke="#84A83D" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+  <!-- small side vein -->
+  <path d="M12 13 C14 12 17 13 19 12" stroke="#84A83D" stroke-width="0.9" stroke-linecap="round" opacity="0.6"/>
+  <path d="M13 18 C15 17 18 18 20 16" stroke="#84A83D" stroke-width="0.9" stroke-linecap="round" opacity="0.6"/>
+</svg>

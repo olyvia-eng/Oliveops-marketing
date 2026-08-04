@@ -1,15 +1,4 @@
-import { SESClient, SendEmailCommand } from "@aws-sdk/client-ses";
-
-const sesClient = new SESClient({
-  region: process.env.AWS_REGION || "us-east-2",
-  credentials: process.env.AWS_ACCESS_KEY_ID && process.env.AWS_SECRET_ACCESS_KEY
-    ? {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
-        ...(process.env.AWS_SESSION_TOKEN ? { sessionToken: process.env.AWS_SESSION_TOKEN } : {}),
-      }
-    : undefined,
-});
+import { Resend } from "resend";
 
 export interface BetaWaitlistEmailPayload {
   name: string;
@@ -24,14 +13,17 @@ export interface BetaWaitlistEmailPayload {
 }
 
 export async function sendBetaWaitlistNotification(payload: BetaWaitlistEmailPayload) {
+  const apiKey = process.env.RESEND_API_KEY;
   const toAddress = process.env.BETA_WAITLIST_NOTIFICATION_EMAIL || "olyvia@landcorexcavating.ca";
-  const fromAddress = process.env.BETA_WAITLIST_FROM_EMAIL;
+  const fromAddress = process.env.BETA_WAITLIST_FROM_EMAIL || "OliveOps <onboarding@resend.dev>";
 
-  if (!fromAddress) {
-    return { success: false, error: "Missing BETA_WAITLIST_FROM_EMAIL" };
+  if (!apiKey) {
+    console.warn("RESEND_API_KEY is not set — skipping email notification");
+    return { success: false, error: "Missing RESEND_API_KEY" };
   }
 
-  const subject = `New OliveOps beta request from ${payload.name || "a new lead"}`;
+  const resend = new Resend(apiKey);
+
   const bodyText = [
     `Name: ${payload.name || "N/A"}`,
     `Company: ${payload.companyName || "N/A"}`,
@@ -44,25 +36,13 @@ export async function sendBetaWaitlistNotification(payload: BetaWaitlistEmailPay
     `Submitted: ${payload.createdAt || "N/A"}`,
   ].join("\n");
 
-  const command = new SendEmailCommand({
-    Source: fromAddress,
-    Destination: {
-      ToAddresses: [toAddress],
-    },
-    Message: {
-      Subject: {
-        Data: subject,
-      },
-      Body: {
-        Text: {
-          Data: bodyText,
-        },
-      },
-    },
-  });
-
   try {
-    await sesClient.send(command);
+    await resend.emails.send({
+      from: fromAddress,
+      to: toAddress,
+      subject: `New OliveOps beta request from ${payload.name || "a new lead"}`,
+      text: bodyText,
+    });
     return { success: true };
   } catch (error) {
     console.error("Failed to send beta waitlist notification email", error);

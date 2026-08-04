@@ -20,9 +20,7 @@ export default function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 bg-[#6B8E23] rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">O</span>
-            </div>
+            <img src="/logo.svg" alt="OliveOps logo" className="w-8 h-8" />
             <span className="text-[#0F172A] dark:text-[#F8FAFC] font-bold text-lg tracking-tight">
               OliveOps
             </span>

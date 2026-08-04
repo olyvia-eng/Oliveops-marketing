@@ -26,9 +26,6 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button href="/beta" size="lg">
-              Request Beta
-            </Button>
-            <Button href="/beta" size="lg" variant="outline" className="border-[#6B8E23] text-[#0F172A] hover:bg-[#EEF4E3] hover:border-[#6B8E23] dark:text-[#F8FAFC] dark:hover:bg-[#1E293B] dark:hover:border-[#84A83D]">
               Join Beta
             </Button>
           </div>
