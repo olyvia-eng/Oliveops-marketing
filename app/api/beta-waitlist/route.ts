@@ -2,6 +2,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, PutCommand, ScanCommand } from "@aws-sdk/lib-dynamodb";
 import { NextRequest, NextResponse } from "next/server";
 import { createBetaWaitlistItem, validateBetaWaitlistInput } from "@/lib/betaWaitlist";
+import { sendBetaWaitlistNotification } from "@/lib/sendBetaWaitlistEmail";
 
 const tableName = process.env.BETA_WAITLIST_TABLE_NAME || "OliveOps-betawaitlist";
 
@@ -60,6 +61,11 @@ export async function POST(request: NextRequest) {
         Item: normalized,
       })
     );
+
+    await sendBetaWaitlistNotification({
+      ...normalized,
+      createdAt: normalized.createdAt,
+    });
 
     return NextResponse.json({
       success: true,

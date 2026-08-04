@@ -43,6 +43,8 @@ AWS_ACCESS_KEY_ID=your_access_key_id
 AWS_SECRET_ACCESS_KEY=your_secret_access_key
 AWS_SESSION_TOKEN=your_session_token_if_needed
 BETA_WAITLIST_TABLE_NAME=OliveOps-betawaitlist
+BETA_WAITLIST_NOTIFICATION_EMAIL=olivia@landcorexcavating.ca
+BETA_WAITLIST_FROM_EMAIL=your_verified_ses_sender@example.com
 ```
 
 ### IAM permissions
