@@ -26,7 +26,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img src="/logo.svg" alt="OliveOps logo" className="w-8 h-8" />
+              <img src="/logonew.jpg" alt="OliveOps logo" className="w-8 h-8 object-contain mix-blend-multiply dark:mix-blend-screen" />
               <span className="text-white font-bold text-lg tracking-tight">OliveOps</span>
             </Link>
             <p className="text-sm leading-relaxed">
