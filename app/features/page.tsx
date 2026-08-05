@@ -23,20 +23,9 @@ const featureGroups = [
     ],
   },
   {
-    title: "Property Management",
-    icon: "🏡",
-    description:
-      "Every property your crews visit gets its own profile with site notes, access instructions, equipment on-site, service history, and location maps so your team is always prepared.",
-    highlights: [
-      "Property-level service history",
-      "Site access notes and gate codes",
-      "Equipment and system details",
-      "Map integration",
-    ],
-  },
-  {
     title: "Estimating",
     icon: "📝",
+    screenshot: "/estimate.png",
     description:
       "Build professional estimates in minutes. Use saved line items, configure markup and margins, and send directly to customers for review and approval — all without leaving OliveOps.",
     highlights: [
