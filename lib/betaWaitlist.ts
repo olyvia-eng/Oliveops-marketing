@@ -41,7 +41,6 @@ export function validateBetaWaitlistInput(input: BetaWaitlistInput): ValidationR
   }
   if (!normalized.contractorType) errors.contractorType = "Contractor type is required.";
   if (!normalized.employeeCount) errors.employeeCount = "Employee count is required.";
-  if (!normalized.currentSoftware) errors.currentSoftware = "Current estimating method/software is required.";
   if (!normalized.painPoint) errors.painPoint = "Please share your biggest pain point.";
 
   return { isValid: Object.keys(errors).length === 0, errors };
