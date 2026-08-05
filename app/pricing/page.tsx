@@ -13,7 +13,7 @@ const plans = [
     price: "Coming Soon",
     description: "Perfect for solo operators and small crews just getting organized.",
     features: [
-      "Up to 5 users",
+      "Unlimited users",
       "Customer & property management",
       "Basic estimating",
       "Job tracking",
@@ -27,7 +27,7 @@ const plans = [
     price: "Coming Soon",
     description: "For growing operations that need full workflow management.",
     features: [
-      "Up to 25 users",
+      "Unlimited users",
       "Everything in Starter",
       "Advanced scheduling",
       "Employee time tracking",
