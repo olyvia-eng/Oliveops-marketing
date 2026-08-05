@@ -60,6 +60,8 @@ export function createBetaWaitlistItem(input: BetaWaitlistInput) {
     currentSoftware: normalized.currentSoftware,
     painPoint: normalized.painPoint,
     createdAt: new Date().toISOString(),
-    status: "pending",
+    source: "website",
+    status: "waiting",
+    confirmationSent: false,
   };
 }

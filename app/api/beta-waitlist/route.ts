@@ -1,8 +1,8 @@
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
-import { DynamoDBDocumentClient, PutCommand, ScanCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBDocumentClient, PutCommand, ScanCommand, UpdateCommand } from "@aws-sdk/lib-dynamodb";
 import { NextRequest, NextResponse } from "next/server";
 import { createBetaWaitlistItem, validateBetaWaitlistInput } from "@/lib/betaWaitlist";
-import { sendBetaWaitlistNotification } from "@/lib/sendBetaWaitlistEmail";
+import { sendBetaWaitlistNotification, sendBetaWaitlistConfirmation } from "@/lib/sendBetaWaitlistEmail";
 
 const tableName = process.env.BETA_WAITLIST_TABLE_NAME || "OliveOps-betawaitlist";
 
@@ -31,15 +31,13 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const normalized = createBetaWaitlistItem(payload);
+    const item = createBetaWaitlistItem(payload);
 
     const existing = await docClient.send(
       new ScanCommand({
         TableName: tableName,
         FilterExpression: "email = :email",
-        ExpressionAttributeValues: {
-          ":email": normalized.email,
-        },
+        ExpressionAttributeValues: { ":email": item.email },
         ProjectionExpression: "email",
       })
     );
@@ -55,17 +53,40 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    await docClient.send(
-      new PutCommand({
-        TableName: tableName,
-        Item: normalized,
-      })
+    // 1. Write the waitlist record. Emails are sent only if this succeeds.
+    await docClient.send(new PutCommand({ TableName: tableName, Item: item }));
+
+    // 2. Send internal admin notification. Failure does not affect the response.
+    sendBetaWaitlistNotification({ ...item }).catch((err) =>
+      console.error("Admin notification failed (non-fatal)", err)
     );
 
-    await sendBetaWaitlistNotification({
-      ...normalized,
-      createdAt: normalized.createdAt,
+    // 3. Send confirmation email to the applicant.
+    const confirmation = await sendBetaWaitlistConfirmation({
+      name: item.name,
+      email: item.email,
     });
+
+    // 4. Record whether the confirmation was sent. Failure here is non-fatal.
+    if (confirmation.success) {
+      const sentAt = new Date().toISOString();
+      docClient
+        .send(
+          new UpdateCommand({
+            TableName: tableName,
+            Key: { id: item.id },
+            UpdateExpression:
+              "SET confirmationSent = :sent, confirmationSentAt = :sentAt",
+            ExpressionAttributeValues: {
+              ":sent": true,
+              ":sentAt": sentAt,
+            },
+          })
+        )
+        .catch((err) =>
+          console.error("Failed to update confirmationSent in DynamoDB (non-fatal)", err)
+        );
+    }
 
     return NextResponse.json({
       success: true,
@@ -82,3 +103,4 @@ export async function POST(request: NextRequest) {
     );
   }
 }
+
