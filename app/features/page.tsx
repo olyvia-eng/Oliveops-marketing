@@ -51,6 +51,7 @@ const featureGroups = [
   {
     title: "Employee & Crew Management",
     icon: "👷",
+    screenshot: "/employee.png",
     description:
       "Manage your full workforce. Track time on jobs, see crew locations, manage certifications, and assign workers to the right jobs based on skills and availability.",
     highlights: [
