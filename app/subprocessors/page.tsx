@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unescaped-entities */
 import { Metadata } from "next";
 import { LegalPage } from "@/components/legal/LegalPage";
 import { LegalSection } from "@/components/legal/LegalSection";
@@ -33,13 +32,12 @@ export default function SubprocessorsPage() {
     >
       <LegalSection level={2} id="introduction" title="1. Introduction">
         <p>
-          This page provides a transparent registry of third-party service providers ("Subprocessors") that OliveOps uses to process
-          customer data on your behalf.
+          This page provides a transparent registry of third-party service providers (&ldquo;Subprocessors&rdquo;) that OliveOps
+          engages to process customer data on your behalf.
         </p>
         <p>
-        By using OliveOps, you acknowledge that OliveOps engages the subprocessors listed on this page to deliver the Service.
-        OliveOps works to ensure that service providers handle data appropriately, and reviews provider terms and privacy practices
-        as part of its vendor assessment process.
+          OliveOps works to ensure that service providers handle data appropriately, and reviews provider terms and privacy
+          practices as part of its vendor assessment process.
         </p>
       </LegalSection>
 
@@ -179,16 +177,19 @@ export default function SubprocessorsPage() {
             </div>
           </div>
 
-          {/* Mobile Apps */}
+          {/* Mobile distribution — not a subprocessor; classified as future distribution channel */}
           <div className="rounded-lg border border-amber-200 bg-amber-50 p-4 dark:border-amber-900 dark:bg-amber-900/20">
             <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
               <div>
-                <h4 className="font-semibold text-amber-900 dark:text-amber-100">Provider</h4>
-                <p className="text-amber-900 dark:text-amber-100">Apple App Store and Google Play (planned mobile apps)</p>
+                <h4 className="font-semibold text-amber-900 dark:text-amber-100">Platform</h4>
+                <p className="text-amber-900 dark:text-amber-100">Apple App Store and Google Play</p>
               </div>
               <div>
-                <h4 className="font-semibold text-amber-900 dark:text-amber-100">Purpose</h4>
-                <p className="text-amber-900 dark:text-amber-100">iOS and Android application distribution</p>
+                <h4 className="font-semibold text-amber-900 dark:text-amber-100">Classification</h4>
+                <p className="text-amber-900 dark:text-amber-100">
+                  Mobile application distribution platforms that may be used in the future. These platforms are not currently
+                  active and do not process OliveOps customer data on our behalf.
+                </p>
               </div>
             </div>
           </div>
@@ -208,9 +209,12 @@ export default function SubprocessorsPage() {
 
       <LegalSection level={2} id="approval" title="5. Objecting to Subprocessor Changes">
         <p>
-          If you have concerns about a specific subprocessor or a proposed change, please contact us at {legalConfig.legalEmail}.
-        Where required by applicable law or a customer agreement, OliveOps will provide notice of material new subprocessors and
-        address reasonable objections in accordance with the terms of the applicable agreement.
+          If you have concerns about a specific subprocessor or a proposed change, please contact us at{" "}
+          <a href={`mailto:${legalConfig.legalEmail}`} className="text-[#6B8E23] hover:underline dark:text-[#84A83D]">
+            {legalConfig.legalEmail}
+          </a>.
+          Where required by applicable law or a customer agreement, OliveOps will provide notice of material new subprocessors and
+          address reasonable objections in accordance with the terms of the applicable agreement.
         </p>
       </LegalSection>
     </LegalPage>

@@ -42,17 +42,13 @@ export default function DPAPage() {
     >
       <LegalSection level={2} id="introduction" title="1. Introduction and Acceptance">
         <p>
-          This Data Processing Addendum ("DPA") is an addendum to the Terms of Service and governs how {legalConfig.companyLegalName}
-          ("OliveOps," "Processor") processes personal data on behalf of our customers ("Customer," "Controller" or "Organization").
+          This Data Processing Addendum (&ldquo;DPA&rdquo;) forms part of the OliveOps Terms of Service. It becomes effective
+          when a Customer accepts those Terms and OliveOps processes Personal Information on the Customer&rsquo;s behalf.
+          Viewing this page alone does not create a separate agreement.
         </p>
         <p>
-          By using OliveOps and agreeing to the Terms of Service, you agree to this DPA. This DPA is incorporated by reference into
-          the Terms of Service.
-        </p>
-        <p>
-          <strong>IMPORTANT LEGAL NOTICE:</strong> This DPA is provided as a template for informational purposes only. This DPA must be
-          reviewed and approved by qualified Canadian legal counsel before execution. It is not a substitute for legal advice, and the
-          adequacy of these terms for your specific circumstances must be verified by a lawyer.
+          In this DPA, {legalConfig.companyLegalName} (&ldquo;OliveOps&rdquo;) acts as the Processor or service provider;
+          the Customer acts as the Controller or responsible organization for the Personal Data it submits to the Service.
         </p>
       </LegalSection>
 
@@ -87,8 +83,8 @@ export default function DPAPage() {
           <li>Implements appropriate security safeguards</li>
           <li>Maintains records of processing activities</li>
           <li>Assists Customer in responding to Data Subject requests</li>
-          <li>Notifies Customer of security incidents and breaches</li>
-          <li>Deletes or returns Personal Data upon request or contract termination</li>
+          <li>Notifies Customer of security incidents without undue delay, as required by applicable law</li>
+          <li>Deletes or returns Personal Data in accordance with the applicable agreement, legal obligations, technical limitations, and normal backup retention processes</li>
         </ul>
       </LegalSection>
 
@@ -116,15 +112,13 @@ export default function DPAPage() {
         </p>
         <ul className="space-y-2 list-disc list-inside">
           <li>Encryption of data in transit (TLS/HTTPS)</li>
-          <li>Encryption and access controls for data at rest</li>
+          <li>Access controls for stored data, where supported by the applicable infrastructure provider</li>
           <li>Role-based access control (RBAC)</li>
           <li>User authentication and session management</li>
           <li>Regular security updates and vulnerability management</li>
           <li>Audit logging and monitoring</li>
-          <li>Employee confidentiality agreements</li>
-          <li>Background checks for employees with data access</li>
+          <li>Employee confidentiality obligations</li>
           <li>Incident response procedures</li>
-          <li>Disaster recovery and business continuity planning</li>
         </ul>
         <p>
           Additional security details are available in our <a href="/security" className="text-[#6B8E23] hover:underline dark:text-[#84A83D]">
@@ -198,7 +192,7 @@ export default function DPAPage() {
           OliveOps complies with applicable mechanisms for international data transfers, including:
         </p>
         <ul className="space-y-2 list-disc list-inside">
-          <li>Standard Contractual Clauses (SCCs) under GDPR</li>
+          <li>Standard Contractual Clauses (SCCs) or other transfer mechanisms under GDPR, where applicable</li>
           <li>Adequacy determinations where applicable</li>
           <li>Compliance with PIPEDA and Canadian privacy law</li>
         </ul>
@@ -206,15 +200,20 @@ export default function DPAPage() {
 
       <LegalSection level={2} id="deletion" title="10. Return and Deletion">
         <p>
-          Upon termination of the subscription or request by Customer, OliveOps will:
+          Upon termination of the subscription or a written request by Customer, OliveOps will delete or return Customer Data
+          in accordance with the applicable agreement, legal obligations, technical limitations, and normal backup retention
+          processes. Specifically, OliveOps will:
         </p>
         <ul className="space-y-2 list-disc list-inside">
-          <li>Cease processing of Personal Data</li>
-          <li>Provide Customer an opportunity to export Personal Data</li>
-          <li>Delete Personal Data from production systems after a grace period</li>
-          <li>Retain backup copies as necessary for disaster recovery (eventually purged)</li>
-          <li>Provide written confirmation of deletion upon request</li>
+          <li>Cease active processing of Personal Data</li>
+          <li>Provide Customer a reasonable opportunity to export Personal Data where export is supported</li>
+          <li>Remove Personal Data from production systems in accordance with normal deletion cycles</li>
+          <li>Allow backup copies to persist until overwritten under normal retention cycles</li>
         </ul>
+        <p>
+          Certain financial, billing, security, and legal records may be retained longer where required or reasonably necessary.
+          OliveOps will confirm deletion upon written request where feasible.
+        </p>
       </LegalSection>
 
       <LegalSection level={2} id="canadian-privacy" title="11. Canadian Privacy Law (PIPEDA)">
@@ -244,7 +243,7 @@ export default function DPAPage() {
           <li>OliveOps will not engage subprocessors without prior specific or general written authorization from Customer</li>
           <li>OliveOps will assist Customer in fulfilling GDPR rights (access, rectification, erasure, etc.)</li>
           <li>OliveOps will assist Customer in complying with GDPR obligations (data protection impact assessments, privacy notices, etc.)</li>
-          <li>OliveOps will delete or return Personal Data upon request or contract termination</li>
+          <li>OliveOps will delete or return Personal Data in accordance with the applicable agreement, legal obligations, and normal backup retention processes</li>
           <li>OliveOps will make available to Customer all information necessary to demonstrate compliance with GDPR Article 28</li>
         </ul>
       </LegalSection>
@@ -274,16 +273,21 @@ export default function DPAPage() {
         <p>
           For questions about this DPA, security practices, or data processing inquiries, contact:
         </p>
-        <div className="bg-[#F8FAFC] p-4 rounded-lg dark:bg-[#111827]">
+        <div className="rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-4 dark:border-[#334155] dark:bg-[#111827]">
           <p className="text-sm">
             <strong>Privacy and Legal Contact:</strong>
             <br />
-            {legalConfig.legalEmail}
-            <br />
-            <br />
-            <strong>Mailing Address:</strong>
-            <br />
-            {legalConfig.mailingAddress}
+            <a href={`mailto:${legalConfig.legalEmail}`} className="text-[#6B8E23] hover:underline dark:text-[#84A83D]">
+              {legalConfig.legalEmail}
+            </a>
+            {legalConfig.mailingAddress && (
+              <>
+                <br /><br />
+                <strong>Mailing Address:</strong>
+                <br />
+                {legalConfig.mailingAddress}
+              </>
+            )}
           </p>
         </div>
       </LegalSection>

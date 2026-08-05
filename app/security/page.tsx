@@ -29,7 +29,7 @@ const tableOfContents = [
   { id: "employee-access", label: "Employee and Administrator Access", level: 2 as const },
   { id: "customer-responsibility", label: "Customer Security Responsibilities", level: 2 as const },
   { id: "responsible-disclosure", label: "Reporting Security Issues", level: 2 as const },
-  { id: "certifications", label: "Certifications and Compliance", level: 2 as const },
+  { id: "certifications", label: "Certifications", level: 2 as const },
   { id: "limitations", label: "Security Limitations", level: 2 as const },
 ];
 
@@ -247,16 +247,13 @@ export default function SecurityPage() {
         </p>
       </LegalSection>
 
-      <LegalSection level={2} id="certifications" title="16. Certifications and Compliance">
+      <LegalSection level={2} id="certifications" title="16. Certifications">
         <p>
-          <strong>Important:</strong> We do not claim specific security certifications such as SOC 2, ISO 27001, HIPAA compliance, or
-          similar unless independently verified and documented.
-        </p>
-        <p>
-          We are committed to compliance with applicable privacy laws including Canadian PIPEDA and GDPR where applicable.
-        </p>
-        <p>
-          For information about specific compliance requirements or certifications, please contact {legalConfig.legalEmail}.
+          OliveOps does not represent that it holds any independent security certification unless explicitly stated on this website.
+          For compliance questions or to request information about our security practices, contact{" "}
+          <a href={`mailto:${legalConfig.securityEmail}`} className="text-[#6B8E23] hover:underline dark:text-[#84A83D]">
+            {legalConfig.securityEmail}
+          </a>.
         </p>
       </LegalSection>
 
