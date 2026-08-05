@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "OliveOps — The Operating System for Contractors",
   description:
     "Manage customers, properties, estimates, jobs, employees, and operations from one powerful platform built for contractors.",
+  icons: {
+    icon: "/logonew.jpg",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
