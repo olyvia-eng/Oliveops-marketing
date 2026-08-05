@@ -55,8 +55,8 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-slate-900 mb-2">Already have questions?</h3>
                 <p className="text-slate-600 text-sm mb-3">
                   Reach us directly at{" "}
-                  <a href="mailto:hello@oliveops.com" className="text-[#6B8E23] hover:underline font-medium dark:text-[#84A83D]">
-                    hello@oliveops.com
+                  <a href="mailto:support@oliveops.ca" className="text-[#6B8E23] hover:underline font-medium dark:text-[#84A83D]">
+                    support@oliveops.ca
                   </a>
                 </p>
                 <p className="text-slate-500 text-xs">We respond within 1–2 business days.</p>
@@ -66,7 +66,7 @@ export default function ContactPage() {
             {/* Right: form */}
             <div className="bg-[#FFFFFF] rounded-2xl border border-[#E2E8F0] shadow-sm p-8 dark:bg-[#1E293B] dark:border-[#334155]">
               <h2 className="text-xl font-bold text-slate-900 mb-6">
-                Request beta access or join the program
+                Request Beta Access
               </h2>
               <ContactForm />
             </div>

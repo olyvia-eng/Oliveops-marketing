@@ -10,12 +10,6 @@ const footerLinks = {
     { label: "Contact", href: "/contact" },
     { label: "Log in", href: "https://app.oliveops.ca", external: true },
   ],
-  Industries: [
-    { label: "Excavation", href: "/features" },
-    { label: "Septic", href: "/features" },
-    { label: "Landscaping", href: "/features" },
-    { label: "Snow Removal", href: "/features" },
-  ],
 };
 
 export default function Footer() {
