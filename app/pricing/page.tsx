@@ -1,75 +1,37 @@
 import type { Metadata } from "next";
 import Button from "@/components/ui/Button";
+import { Check } from "lucide-react";
 import CTASection from "@/components/sections/CTASection";
 
 export const metadata: Metadata = {
-  title: "Pricing — OliveOps",
-  description: "Simple, transparent pricing for contractors of every size.",
+  title: "Beta Program — OliveOps",
+  description: "Join the OliveOps Founding Contractor Beta. Free full access during private beta.",
 };
 
-const plans = [
-  {
-    name: "Starter",
-    price: "Coming Soon",
-    description: "Perfect for solo operators and small crews just getting organized.",
-    features: [
-      "Unlimited users",
-      "Customer & property management",
-      "Basic estimating",
-      "Job tracking",
-      "Email support",
-    ],
-    cta: "Join Beta",
-    highlighted: false,
-  },
-  {
-    name: "Professional",
-    price: "Coming Soon",
-    description: "For growing operations that need full workflow management.",
-    features: [
-      "Unlimited users",
-      "Everything in Starter",
-      "Advanced scheduling",
-      "Employee time tracking",
-      "Document management",
-      "Priority support",
-    ],
-    cta: "Request Beta",
-    highlighted: true,
-  },
-  {
-    name: "Enterprise",
-    price: "Custom",
-    description: "For large contractors and multi-location operations with custom needs.",
-    features: [
-      "Unlimited users",
-      "Everything in Professional",
-      "Custom integrations",
-      "Dedicated account manager",
-      "Onboarding & training",
-      "SLA guarantee",
-    ],
-    cta: "Contact Us",
-    highlighted: false,
-  },
+const benefits = [
+  "Full platform access — every feature, no limits",
+  "Personal onboarding with the OliveOps team",
+  "Direct influence on the product roadmap",
+  "Priority support throughout beta",
+  "Founding customer pricing locked in after launch",
 ];
 
 const faqs = [
   {
     q: "Is OliveOps available now?",
-    a: "OliveOps is currently in beta. Join the waitlist to get early access and help shape the product.",
+    a: "OliveOps is in private beta. We're onboarding a limited number of contractors to test and shape the platform before public launch.",
+  },
+  {
+    q: "What does the beta cost?",
+    a: "Nothing. The beta is completely free. Founding contractors who help shape the product will receive preferential pricing when we launch publicly.",
   },
   {
     q: "Will my data be secure?",
-    a: "Yes. OliveOps is built with security and data privacy as a priority. Your customer and business data is encrypted and never shared.",
+    a: "Yes. OliveOps is built with security and data privacy as a priority. Your business data is encrypted and never shared.",
   },
   {
     q: "Can I import my existing data?",
     a: "Yes — we help you migrate your existing customer lists, property records, and job history into OliveOps during onboarding.",
-  },
-  {
-    q: "Do you offer a free trial?",
-    a: "Beta users get access to the full platform. Request beta access and we'll get you set up at no cost during the beta period.",
   },
 ];
 
@@ -79,75 +41,60 @@ export default function PricingPage() {
       {/* Header */}
       <section className="py-20 bg-gradient-to-br from-[#F8FAFC] via-[#FFFFFF] to-[#EEF4E3] dark:from-[#0F172A] dark:via-[#111827] dark:to-[#0F172A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-[#6B8E23] dark:text-[#84A83D] font-semibold text-sm uppercase tracking-widest mb-4">Pricing</p>
+          <p className="text-[#6B8E23] dark:text-[#84A83D] font-semibold text-sm uppercase tracking-widest mb-4">Beta Program</p>
           <h1 className="text-4xl md:text-5xl font-bold text-[#0F172A] mb-6 dark:text-[#F8FAFC]">
-            Simple pricing that scales with you
+            Join the founding contractor beta
           </h1>
           <p className="text-[#64748B] text-xl max-w-2xl mx-auto dark:text-[#CBD5E1]">
-            We&apos;re in beta — pricing details are coming soon. Join now and lock in early access rates.
+            Help shape the operating system for contractors. Free full access for a limited number of founding operators.
           </p>
         </div>
       </section>
 
-      {/* Plans */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {plans.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-2xl p-8 border flex flex-col ${
-                  plan.highlighted
-                    ? "border-[#6B8E23] bg-[#EEF4E3] shadow-xl ring-1 ring-[#6B8E23] dark:border-[#84A83D] dark:bg-[#1E293B]"
-                    : "border-slate-200 bg-white shadow-sm"
-                }`}
-              >
-                {plan.highlighted && (
-                  <div className="text-center mb-4">
-                    <span className="bg-[#6B8E23] text-white text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full dark:bg-[#84A83D]">
-                      Most Popular
-                    </span>
+      {/* Single card */}
+      <section className="py-24 bg-[#FFFFFF] dark:bg-[#0F172A]">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="rounded-2xl border-2 border-[#6B8E23] bg-[#F8FAFC] shadow-xl p-10 dark:bg-[#1E293B] dark:border-[#84A83D]">
+            <div className="text-center mb-8">
+              <span className="inline-block bg-[#6B8E23] text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6 dark:bg-[#84A83D]">
+                Private Beta
+              </span>
+              <h2 className="text-2xl font-bold text-[#0F172A] mb-2 dark:text-[#F8FAFC]">Founding Contractor Beta</h2>
+              <p className="text-5xl font-bold text-[#6B8E23] dark:text-[#84A83D] mb-1">Free</p>
+              <p className="text-[#64748B] text-sm dark:text-[#CBD5E1]">During private beta</p>
+            </div>
+
+            <ul className="space-y-4 mb-10">
+              {benefits.map((benefit) => (
+                <li key={benefit} className="flex items-start gap-3">
+                  <div className="w-5 h-5 rounded-full bg-[#EEF4E3] flex items-center justify-center flex-shrink-0 mt-0.5 dark:bg-[#0F172A]">
+                    <Check className="w-3 h-3 text-[#6B8E23] dark:text-[#84A83D]" />
                   </div>
-                )}
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{plan.name}</h3>
-                <p className="text-3xl font-bold text-slate-900 mb-2">{plan.price}</p>
-                <p className="text-slate-500 text-sm mb-6">{plan.description}</p>
-                <ul className="space-y-3 mb-8 flex-1">
-                  {plan.features.map((feature) => (
-                    <li key={feature} className="flex items-center gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[#EEF4E3] flex items-center justify-center flex-shrink-0 dark:bg-[#1E293B]">
-                        <svg className="w-3 h-3 text-[#6B8E23] dark:text-[#84A83D]" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                        </svg>
-                      </div>
-                      <span className="text-slate-700 text-sm">{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Button
-                  href="/contact"
-                  variant={plan.highlighted ? "primary" : "outline"}
-                  className="w-full justify-center"
-                >
-                  {plan.cta}
-                </Button>
-              </div>
-            ))}
+                  <span className="text-[#0F172A] text-sm leading-relaxed dark:text-[#F8FAFC]">{benefit}</span>
+                </li>
+              ))}
+            </ul>
+
+            <Button href="/beta" className="w-full justify-center" size="lg">
+              Apply for Beta Access
+            </Button>
+
+            <p className="text-center text-[#64748B] text-xs mt-4 dark:text-[#CBD5E1]">
+              Limited onboarding spots available.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* FAQs */}
-      <section className="py-24 bg-slate-50">
+      {/* FAQ */}
+      <section className="py-20 bg-[#F8FAFC] dark:bg-[#111827]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-slate-900 text-center mb-12">
-            Frequently asked questions
-          </h2>
+          <h2 className="text-2xl font-bold text-[#0F172A] mb-10 text-center dark:text-[#F8FAFC]">Common questions</h2>
           <div className="space-y-6">
             {faqs.map((faq) => (
-              <div key={faq.q} className="bg-white rounded-xl p-6 border border-slate-200">
-                <h3 className="font-semibold text-slate-900 mb-2">{faq.q}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{faq.a}</p>
+              <div key={faq.q} className="bg-[#FFFFFF] rounded-2xl p-6 border border-[#E2E8F0] dark:bg-[#1E293B] dark:border-[#334155]">
+                <h3 className="font-semibold text-[#0F172A] mb-2 dark:text-[#F8FAFC]">{faq.q}</h3>
+                <p className="text-[#64748B] text-sm leading-relaxed dark:text-[#CBD5E1]">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -158,3 +105,4 @@ export default function PricingPage() {
     </div>
   );
 }
+
