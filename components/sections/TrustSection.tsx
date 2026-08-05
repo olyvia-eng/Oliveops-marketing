@@ -1,7 +1,7 @@
 import { Cloud, RefreshCw, MapPin, Zap } from "lucide-react";
 
 const trustCards = [
-  { icon: Cloud, title: "Secure cloud storage", description: "Your data is encrypted at rest and in transit. Access it from any device, anywhere." },
+  { icon: Cloud, title: "Secure cloud infrastructure", description: "OliveOps uses established cloud-service providers and administrative and technical safeguards designed to protect your information." },
   { icon: RefreshCw, title: "Resilient data storage", description: "OliveOps uses cloud-based storage and recovery practices designed to reduce the risk of data loss. Customers should retain copies of records they require for legal, tax, or regulatory purposes." },
   { icon: MapPin, title: "Canadian-based development", description: "OliveOps is built in Canada, by Canadians, for Canadian contractors and their workflows." },
   { icon: Zap, title: "Continuous updates", description: "We ship improvements regularly. Beta users get every update first and help shape what comes next." },

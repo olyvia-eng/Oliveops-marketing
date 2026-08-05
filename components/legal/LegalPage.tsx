@@ -1,14 +1,12 @@
-/**
- * Main wrapper component for legal pages
- * Provides consistent layout, header, sidebar, and footer
- */
+// Shared wrapper for all legal pages.
+// Uses <div> not <main> — the root layout already provides the <main> landmark.
 
 import Link from "next/link";
 import { ReactNode } from "react";
 import { LegalHeader } from "./LegalHeader";
 import { LegalSidebar } from "./LegalSidebar";
 import { LegalNotice } from "./LegalNotice";
-import { legalConfig } from "@/lib/legal-config";
+import { legalConfig, legalDocuments } from "@/lib/legal-config";
 import { getRelatedPages } from "@/lib/legal-navigation";
 
 interface LegalPageProps {
@@ -17,6 +15,8 @@ interface LegalPageProps {
   estimatedReadTime: string;
   tableOfContents: Array<{ id: string; label: string; level: 1 | 2 | 3 }>;
   currentPage: string;
+  /** Route-specific contact email; defaults to legalConfig.legalEmail */
+  contactEmail?: string;
   children: ReactNode;
 }
 
@@ -26,32 +26,35 @@ export function LegalPage({
   estimatedReadTime,
   tableOfContents,
   currentPage,
+  contactEmail,
   children,
 }: LegalPageProps) {
   const relatedPages = getRelatedPages(currentPage);
+  const docMeta =
+    legalDocuments[currentPage as keyof typeof legalDocuments] ?? {
+      version: "1.0",
+      effectiveDate: legalConfig.effectiveDate,
+      lastUpdated: legalConfig.lastUpdated,
+    };
+  const email = contactEmail || legalConfig.legalEmail;
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF] pt-16 dark:bg-[#0F172A]">
-      {/* Header with navbar height offset */}
+    <div className="min-h-screen bg-[#FFFFFF] pt-16 dark:bg-[#0F172A]">
       <div className="border-b border-[#E2E8F0] dark:border-[#334155]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <LegalHeader
             title={title}
             description={description}
-            effectiveDate={legalConfig.effectiveDate}
-            lastUpdated={legalConfig.lastUpdated}
+            effectiveDate={docMeta.effectiveDate}
+            lastUpdated={docMeta.lastUpdated}
             estimatedReadTime={estimatedReadTime}
-            version="1.0"
+            version={docMeta.version}
           />
         </div>
       </div>
 
-      {/* Legal review notice */}
-      <div className="border-b border-[#E2E8F0] dark:border-[#334155]">
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-          <LegalNotice />
-        </div>
-      </div>
+      {/* Dev-only legal review notice; hidden in production */}
+      <LegalNotice />
 
       {/* Content grid */}
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
@@ -68,23 +71,25 @@ export function LegalPage({
                 Questions about this policy?
               </h3>
               <p className="mb-4 text-[#475569] dark:text-[#CBD5E1]">
-                If you have concerns or questions about this policy, please contact us:
+                Contact us with any concerns or questions about this policy.
               </p>
               <div className="space-y-2 text-sm">
                 <p className="text-[#475569] dark:text-[#CBD5E1]">
                   <span className="font-semibold">Email:</span>{" "}
                   <a
-                    href={`mailto:${legalConfig.legalEmail}`}
+                    href={`mailto:${email}`}
                     className="text-[#6B8E23] hover:underline dark:text-[#84A83D]"
                   >
-                    {legalConfig.legalEmail}
+                    {email}
                   </a>
                 </p>
-                <p className="text-[#475569] dark:text-[#CBD5E1]">
-                  <span className="font-semibold">Address:</span>
-                  <br />
-                  {legalConfig.mailingAddress}
-                </p>
+                {legalConfig.mailingAddress && (
+                  <p className="text-[#475569] dark:text-[#CBD5E1]">
+                    <span className="font-semibold">Address:</span>
+                    <br />
+                    {legalConfig.mailingAddress}
+                  </p>
+                )}
               </div>
             </div>
           </div>
@@ -124,6 +129,7 @@ export function LegalPage({
           </p>
         </div>
       </div>
-    </main>
+    </div>
   );
 }
+

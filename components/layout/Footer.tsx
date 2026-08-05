@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 
 const footerLinks = {
   Product: [
@@ -31,7 +30,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <img src="/logonew.jpg" alt="OliveOps logo" className="w-8 h-8 object-contain mix-blend-multiply dark:mix-blend-screen" />
+              <img src="/favicon.svg" alt="OliveOps logo" className="w-8 h-8" />
               <span className="text-white font-bold text-lg tracking-tight">OliveOps</span>
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-xs">
@@ -41,10 +40,6 @@ export default function Footer() {
               <a href="https://linkedin.com/company/oliveops" target="_blank" rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg bg-[#1E293B] flex items-center justify-center hover:bg-[#334155] transition-colors text-xs font-bold text-[#CBD5E1]">
                 in
-              </a>
-              <a href="https://github.com/oliveops" target="_blank" rel="noopener noreferrer"
-                className="w-9 h-9 rounded-lg bg-[#1E293B] flex items-center justify-center hover:bg-[#334155] transition-colors">
-                <ExternalLink className="w-4 h-4" />
               </a>
             </div>
           </div>

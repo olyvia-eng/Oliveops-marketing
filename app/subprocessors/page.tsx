@@ -29,6 +29,7 @@ export default function SubprocessorsPage() {
       estimatedReadTime="3 min read"
       tableOfContents={tableOfContents}
       currentPage="subprocessors"
+      contactEmail={legalConfig.legalEmail}
     >
       <LegalSection level={2} id="introduction" title="1. Introduction">
         <p>
@@ -36,8 +37,9 @@ export default function SubprocessorsPage() {
           customer data on your behalf.
         </p>
         <p>
-          By using OliveOps, you consent to OliveOps engaging these Subprocessors to provide the Service. Each Subprocessor is contractually
-          obligated to comply with applicable data protection laws and to implement appropriate security safeguards.
+        By using OliveOps, you acknowledge that OliveOps engages the subprocessors listed on this page to deliver the Service.
+        OliveOps works to ensure that service providers handle data appropriately, and reviews provider terms and privacy practices
+        as part of its vendor assessment process.
         </p>
       </LegalSection>
 
@@ -198,25 +200,17 @@ export default function SubprocessorsPage() {
           OliveOps may add, remove, or change Subprocessors as necessary to provide and improve the Service. OliveOps will:
         </p>
         <ul className="space-y-2 list-disc list-inside">
-          <li>Maintain an up-to-date list of Subprocessors on this page</li>
-          <li>Notify customers of material changes to the list when practical</li>
-          <li>Ensure all Subprocessors comply with applicable data protection laws</li>
-          <li>Include appropriate data processing clauses in Subprocessor agreements</li>
+          <li>Maintain an up-to-date list of subprocessors on this page</li>
+          <li>Notify customers of material changes where practical</li>
+          <li>Review subprocessor data practices as part of its vendor assessment process</li>
         </ul>
       </LegalSection>
 
       <LegalSection level={2} id="approval" title="5. Objecting to Subprocessor Changes">
         <p>
-          If you object to the use of a new or changed Subprocessor, you may:
-        </p>
-        <ul className="space-y-2 list-disc list-inside">
-          <li>Contact {legalConfig.legalEmail} within 30 days of receiving notice</li>
-          <li>Request termination of your subscription without penalty</li>
-          <li>Export your data before termination</li>
-        </ul>
-        <p>
-          Objections must be submitted in writing and must specify the Subprocessor you object to and your reasons for the objection.
-          OliveOps will consider your objection in good faith.
+          If you have concerns about a specific subprocessor or a proposed change, please contact us at {legalConfig.legalEmail}.
+        Where required by applicable law or a customer agreement, OliveOps will provide notice of material new subprocessors and
+        address reasonable objections in accordance with the terms of the applicable agreement.
         </p>
       </LegalSection>
     </LegalPage>

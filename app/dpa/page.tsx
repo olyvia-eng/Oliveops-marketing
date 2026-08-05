@@ -38,6 +38,7 @@ export default function DPAPage() {
       estimatedReadTime="14 min read"
       tableOfContents={tableOfContents}
       currentPage="dpa"
+      contactEmail={legalConfig.legalEmail}
     >
       <LegalSection level={2} id="introduction" title="1. Introduction and Acceptance">
         <p>
@@ -149,8 +150,7 @@ export default function DPAPage() {
         </ul>
         <p>
           <strong>Changes to Subprocessors:</strong> OliveOps may add or replace subprocessors as necessary to provide the Service.
-          Where practical, we will provide notice of material changes. If Customer objects to a new subprocessor, Customer may
-          terminate the affected subscription without penalty within 30 days of the notice.
+          Where practical, we will provide notice of material changes. Customers who object to a new subprocessor may contact us at {legalConfig.legalEmail} to discuss the concern. Resolution will depend on the applicable agreement and circumstances.
         </p>
       </LegalSection>
 

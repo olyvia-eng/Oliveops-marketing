@@ -1,67 +1,56 @@
-/**
- * Legal configuration for OliveOps
- * IMPORTANT: All placeholder values marked with REPLACE_WITH_ must be reviewed and updated
- * by qualified Canadian legal counsel before commercial launch.
- */
+// Legal configuration for OliveOps.
+// Set NEXT_PUBLIC_* environment variables to override defaults.
+// See .env.example for the full list.
+// LEGAL REVIEW REQUIRED before commercial launch — see LEGAL_IMPLEMENTATION_NOTES.md
 
 export const legalConfig = {
-  // Company details
-  companyLegalName: "REPLACE_WITH_LEGAL_COMPANY_NAME",
+  // Use env var or fall back to the product name (not a registered legal entity name)
+  companyLegalName:
+    process.env.NEXT_PUBLIC_LEGAL_COMPANY_NAME || "OliveOps",
+
   productName: "OliveOps",
   websiteUrl: "https://oliveops.ca",
 
-  // Contact information
-  privacyEmail: "REPLACE_WITH_PRIVACY_EMAIL@oliveops.ca",
-  legalEmail: "REPLACE_WITH_LEGAL_EMAIL@oliveops.ca",
-  securityEmail: "REPLACE_WITH_SECURITY_EMAIL@oliveops.ca",
+  // support@oliveops.ca confirmed in app/contact/page.tsx
+  privacyEmail:
+    process.env.NEXT_PUBLIC_PRIVACY_EMAIL || "support@oliveops.ca",
+  legalEmail:
+    process.env.NEXT_PUBLIC_LEGAL_EMAIL || "support@oliveops.ca",
+  securityEmail:
+    process.env.NEXT_PUBLIC_SECURITY_EMAIL || "support@oliveops.ca",
 
-  // Mailing address
-  mailingAddress: "REPLACE_WITH_BUSINESS_MAILING_ADDRESS",
+  // Leave empty to suppress the address row on legal pages
+  mailingAddress:
+    process.env.NEXT_PUBLIC_BUSINESS_MAILING_ADDRESS || "",
+
   governingProvince: "Ontario",
   governingCountry: "Canada",
 
-  // Document versions
+  // Global fallback dates — overridden per-document in legalDocuments below
   effectiveDate: "August 5, 2026",
   lastUpdated: "August 5, 2026",
-
-  // Infrastructure and services (verified in codebase)
-  infrastructure: {
-    hosting: "Vercel",
-    database: "AWS DynamoDB",
-    emailService: "Resend",
-    region: "us-east-2",
-  },
-
-  // Future/unverified services (handled with careful language)
-  futureIntegrations: {
-    payments: "Stripe (planned)",
-    accounting: "QuickBooks (planned)",
-    mobile: "iOS and Android apps (planned)",
-  },
 };
 
-/**
- * Confirmation of verified infrastructure components
- * These have been found in the codebase and are actively used
- */
+// Per-document versioning — update the relevant entry when a document is revised
+export const legalDocuments = {
+  privacy:               { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  terms:                 { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  security:              { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  cookies:               { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  dpa:                   { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  aup:                   { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  "responsible-disclosure": { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+  subprocessors:         { version: "1.0", effectiveDate: "August 5, 2026", lastUpdated: "August 5, 2026" },
+} as const;
+
+// Infrastructure confirmed in THIS repository only.
+// The full OliveOps SaaS application may use additional services not present here.
 export const verifiedInfrastructure = {
-  vercel: true, // Deployment platform mentioned in docs
-  awsDynamoDB: true, // Used for beta waitlist storage
-  awsSES: true, // Package installed but not actively used in code
-  resend: true, // Used for email notifications
-  nextAuth: false, // Not present in codebase
-  stripe: false, // Not present in codebase
-  analytics: false, // No Google Analytics or similar found
+  vercel: true,      // Confirmed — next.config.ts and README
+  awsDynamoDB: true, // Confirmed — app/api/beta-waitlist/route.ts
+  resend: true,      // Confirmed — lib/sendBetaWaitlistEmail.ts
+  awsSES: false,     // Package present but not actively invoked in this repo
+  stripe: false,
+  analytics: false,
   googleAnalytics: false,
-  firebase: false,
-};
-
-/**
- * Unverified or assumed services (to be documented)
- * These should be verified during legal review
- */
-export const assumedServices = {
-  cloudStorage: "AWS S3 (assumed for future file uploads)",
-  logging: "Assumed CloudWatch or similar (not verified)",
-  cdn: "Vercel edge network (likely via hosting platform)",
 };

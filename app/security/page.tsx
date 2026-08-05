@@ -41,6 +41,7 @@ export default function SecurityPage() {
       estimatedReadTime="8 min read"
       tableOfContents={tableOfContents}
       currentPage="security"
+      contactEmail={legalConfig.securityEmail}
     >
       <LegalSection level={2} id="introduction" title="1. Security Philosophy">
         <p>

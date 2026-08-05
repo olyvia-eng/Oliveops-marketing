@@ -52,6 +52,7 @@ export default function PrivacyPage() {
       estimatedReadTime="12 min read"
       tableOfContents={tableOfContents}
       currentPage="privacy"
+      contactEmail={legalConfig.privacyEmail}
     >
       <LegalSection level={2} id="introduction" title="1. Introduction and Scope">
         <p>
@@ -265,9 +266,9 @@ export default function PrivacyPage() {
         </p>
         <ul className="space-y-2 list-disc list-inside">
           <li>Account information: Retained while account is active; deleted upon account termination</li>
-          <li>Customer and business data: Retained while account is active; retained for REPLACE_WITH_RETENTION_PERIOD days after cancellation to allow data export or recovery</li>
-          <li>Billing and transaction records: Retained for REPLACE_WITH_TAX_RETENTION_PERIOD years to comply with tax and accounting requirements</li>
-          <li>Log and security data: Retained for REPLACE_WITH_LOG_RETENTION_PERIOD days for security analysis</li>
+          <li>Customer and business data: Retained while the account is active; retained for a reasonable administrative period following cancellation to allow data export or recovery where offered</li>
+          <li>Billing and transaction records: Retained for as long as reasonably necessary to comply with tax, accounting, and legal obligations</li>
+          <li>Log and security data: Retained for as long as reasonably necessary for security analysis, incident investigation, and legal compliance</li>
         </ul>
         <p>
           After retention periods expire, information is deleted or anonymized. Certain information may be retained if required by law.

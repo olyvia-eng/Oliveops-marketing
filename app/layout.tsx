@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description:
     "Manage customers, properties, estimates, jobs, employees, and operations from one powerful platform built for contractors.",
   icons: {
-    icon: "/logonew.jpg",
+    icon: "/favicon.svg",
   },
 };
 

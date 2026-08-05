@@ -46,6 +46,7 @@ export default function AUPPage() {
       estimatedReadTime="6 min read"
       tableOfContents={tableOfContents}
       currentPage="aup"
+      contactEmail={legalConfig.legalEmail}
     >
       <LegalSection level={2} id="introduction" title="1. Introduction">
         <p>

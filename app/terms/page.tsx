@@ -66,6 +66,7 @@ export default function TermsPage() {
       estimatedReadTime="15 min read"
       tableOfContents={tableOfContents}
       currentPage="terms"
+      contactEmail={legalConfig.legalEmail}
     >
       <LegalSection level={2} id="introduction" title="1. Introduction and Acceptance">
         <p>

@@ -15,15 +15,13 @@ export const metadata: Metadata = {
 
 const tableOfContents = [
   { id: "introduction", label: "What Are Cookies?", level: 2 as const },
-  { id: "types", label: "Types of Cookies and Technologies", level: 2 as const },
-  { id: "authentication", label: "Authentication Cookies", level: 3 as const },
-  { id: "preference", label: "Preference Cookies", level: 3 as const },
-  { id: "analytics", label: "Analytics and Performance Cookies", level: 3 as const },
-  { id: "storage", label: "Local and Session Storage", level: 3 as const },
-  { id: "third-party", label: "Third-Party Technologies", level: 2 as const },
-  { id: "consent", label: "Cookie Consent", level: 2 as const },
-  { id: "browser-controls", label: "Browser Controls and Opt-Out", level: 2 as const },
-  { id: "gpc", label: "Global Privacy Control", level: 2 as const },
+  { id: "scope", label: "Scope of This Policy", level: 2 as const },
+  { id: "essential", label: "Essential Technologies", level: 2 as const },
+  { id: "application", label: "OliveOps Application", level: 2 as const },
+  { id: "analytics", label: "Analytics and Performance", level: 2 as const },
+  { id: "advertising", label: "Advertising and Marketing", level: 2 as const },
+  { id: "future", label: "Optional and Future Technologies", level: 2 as const },
+  { id: "browser-controls", label: "Browser Controls", level: 2 as const },
   { id: "changes", label: "Changes to This Policy", level: 2 as const },
 ];
 
@@ -31,162 +29,140 @@ export default function CookiesPage() {
   return (
     <LegalPage
       title="Cookie Policy"
-      description="How OliveOps uses cookies and similar tracking technologies"
+      description="How OliveOps uses cookies and similar technologies"
       estimatedReadTime="5 min read"
       tableOfContents={tableOfContents}
       currentPage="cookies"
+      contactEmail={legalConfig.privacyEmail}
     >
       <LegalSection level={2} id="introduction" title="1. What Are Cookies?">
         <p>
-          Cookies are small text files stored on your device (computer, tablet, or mobile phone) that contain information about your
-          browsing activity. Cookies help websites remember your preferences and provide a better user experience.
+          Cookies are small text files placed on your device by a website. They are used to remember information between
+          page loads and sessions. Similar technologies include local storage, session storage, and browser cache.
         </p>
         <p>
-          This Cookie Policy explains what cookies and similar technologies OliveOps uses, why we use them, and how you can manage
-          them.
+          This Cookie Policy explains what technologies OliveOps uses, why, and how you can manage them.
         </p>
       </LegalSection>
 
-      <LegalSection level={2} id="types" title="2. Types of Cookies and Technologies">
+      <LegalSection level={2} id="scope" title="2. Scope of This Policy">
         <p>
-          OliveOps uses the following categories of cookies and similar technologies:
-        </p>
-
-        <LegalSection level={3} id="authentication" title="2.1 Authentication Cookies">
-          <p>
-            <strong>Purpose:</strong> Essential for authenticating your identity and maintaining your login session.
-          </p>
-          <p>
-            <strong>Examples:</strong> Session tokens, authentication credentials, user identifiers.
-          </p>
-          <p>
-            <strong>Duration:</strong> Session-based (expire when you close your browser) or persistent for "remember me" functionality.
-          </p>
-          <p>
-            <strong>User choice:</strong> These cookies are required for OliveOps to function and cannot be disabled.
-          </p>
-        </LegalSection>
-
-        <LegalSection level={3} id="preference" title="2.2 Preference Cookies">
-          <p>
-            <strong>Purpose:</strong> Remember your preferences and settings, such as language, theme (light/dark mode), UI preferences.
-          </p>
-          <p>
-            <strong>Examples:</strong> Theme preference, layout settings, time zone, notification preferences.
-          </p>
-          <p>
-            <strong>Duration:</strong> Persistent, typically stored for 1-2 years.
-          </p>
-          <p>
-            <strong>User choice:</strong> You may disable preference cookies, but some customizations will not be saved.
-          </p>
-        </LegalSection>
-
-        <LegalSection level={3} id="analytics" title="2.3 Analytics and Performance Cookies">
-          <p>
-            <strong>Purpose:</strong> Help us understand how OliveOps is used, including which features are popular, where users click,
-            and how long they spend on pages. This helps us improve the service.
-          </p>
-          <p>
-            <strong>Current status:</strong> OliveOps does not currently use third-party analytics services like Google Analytics.
-            However, we may implement analytics in the future to better understand user behavior and improve the platform.
-          </p>
-          <p>
-            <strong>User choice:</strong> If we implement analytics cookies, you will be able to opt out through your account settings
-            or browser controls.
-          </p>
-        </LegalSection>
-
-        <LegalSection level={3} id="storage" title="2.4 Local and Session Storage">
-          <p>
-            <strong>Purpose:</strong> Store application state, cache data, and improve performance.
-          </p>
-          <p>
-            <strong>Examples:</strong> Cached UI components, unsaved form data, temporary user preferences.
-          </p>
-          <p>
-            <strong>Duration:</strong> Session-based or persistent depending on the purpose.
-          </p>
-          <p>
-            <strong>Functionality:</strong> Similar to cookies but typically larger and not transmitted to servers with every request.
-          </p>
-        </LegalSection>
-      </LegalSection>
-
-      <LegalSection level={2} id="third-party" title="3. Third-Party Technologies">
-        <p>
-          OliveOps may integrate with third-party services that use their own cookies and tracking technologies:
+          OliveOps operates two distinct environments:
         </p>
         <ul className="space-y-2 list-disc list-inside">
           <li>
-            <strong>Email service providers:</strong> May use cookies for email tracking or authentication
+            <strong>Marketing website (oliveops.ca):</strong> Public pages including this website, the beta waitlist, pricing, and
+            contact form. Limited cookies and storage are used here.
           </li>
           <li>
-            <strong>Payment processors:</strong> May use cookies for secure payment processing
-          </li>
-          <li>
-            <strong>Hosting and CDN services:</strong> Vercel and AWS services may use cookies for security and performance
-          </li>
-          <li>
-            <strong>Future integrations:</strong> Third-party accounting or business tools may use their own cookies
+            <strong>OliveOps application (app.oliveops.ca):</strong> The authenticated contractor operations platform. This environment
+            may use additional cookies and browser storage to deliver application features. Authentication, session management, and
+            application preferences are handled in the application environment.
           </li>
         </ul>
         <p>
-          We are not responsible for the cookie practices of third-party services. Please refer to their privacy policies for
-          information about their cookie usage.
+          This policy covers both environments. Where a practice applies only to one environment, this is noted.
         </p>
       </LegalSection>
 
-      <LegalSection level={2} id="consent" title="4. Cookie Consent">
+      <LegalSection level={2} id="essential" title="3. Essential Technologies">
         <p>
-          <strong>Essential cookies:</strong> Authentication and essential operational cookies are necessary for OliveOps to function
-          and do not require consent.
+          The following technologies are necessary for the website and application to function. They do not require consent.
         </p>
-        <p>
-          <strong>Non-essential cookies:</strong> For preference, analytics, and marketing cookies, we obtain your consent where
-          required by law before storing them on your device.
-        </p>
-        <p>
-          You can update your cookie preferences at any time through your account settings or by contacting {legalConfig.legalEmail}.
-        </p>
+        <ul className="space-y-4 list-none">
+          <li>
+            <strong>Hosting and security (Vercel, AWS):</strong> Our hosting and infrastructure providers may set cookies or
+            collect request logs for security, rate limiting, and content delivery purposes. These are governed by their own privacy
+            policies.
+          </li>
+          <li>
+            <strong>Form submissions:</strong> When you submit a form (such as the beta waitlist or contact form), your browser
+            sends the form data to our servers. No tracking cookies are set by these forms.
+          </li>
+          <li>
+            <strong>Application session management (application only):</strong> When you sign in to the OliveOps application,
+            session cookies or tokens are used to maintain your authenticated session. These are essential for the application to
+            function and cannot be disabled while signed in.
+          </li>
+        </ul>
       </LegalSection>
 
-      <LegalSection level={2} id="browser-controls" title="5. Browser Controls and Opt-Out">
+      <LegalSection level={2} id="application" title="4. OliveOps Application">
         <p>
-          Most browsers allow you to control cookies through settings:
+          Within the OliveOps application (app.oliveops.ca), browser storage technologies may be used to:
         </p>
         <ul className="space-y-2 list-disc list-inside">
-          <li><strong>Delete cookies:</strong> Clear cookies stored on your device</li>
-          <li><strong>Block new cookies:</strong> Prevent websites from setting new cookies</li>
-          <li><strong>Third-party cookies:</strong> Block cookies from third-party services</li>
-          <li><strong>Private browsing:</strong> Browse without storing cookies (for that session)</li>
+          <li>Maintain your authenticated session</li>
+          <li>Remember interface preferences such as display settings</li>
+          <li>Cache data to reduce loading times</li>
+          <li>Store unsaved form drafts temporarily</li>
         </ul>
         <p>
-          <strong>Note:</strong> If you disable essential cookies, OliveOps may not function properly. You may not be able to log in
-          or use certain features.
+          These technologies are required for the application to function. You can clear them at any time using your browser settings,
+          though doing so will sign you out and reset any saved preferences.
         </p>
       </LegalSection>
 
-      <LegalSection level={2} id="gpc" title="6. Global Privacy Control">
+      <LegalSection level={2} id="analytics" title="5. Analytics and Performance">
         <p>
-          If your browser or device supports the Global Privacy Control (GPC) signal, OliveOps will recognize and honor your privacy
-          preference to the extent permitted by law.
+          <strong>Current status:</strong> OliveOps does not currently use third-party analytics cookies or tracking services
+          (such as Google Analytics) on the marketing website or application.
         </p>
-      </LegalSection>
-
-      <LegalSection level={2} id="changes" title="7. Changes to This Policy">
         <p>
-          We may update this Cookie Policy to reflect changes in our practices or technologies. We will notify you of material changes
-          by updating the effective date and posting the revised policy on this page.
+          If analytics are added in the future, this policy will be updated and, where required by law, your consent will be
+          requested before analytics cookies are set.
         </p>
       </LegalSection>
 
-      <div className="mt-12 rounded-lg border border-[#E2E8F0] bg-[#F8FAFC] p-6 dark:border-[#334155] dark:bg-[#111827]">
-        <p className="text-sm text-[#475569] dark:text-[#CBD5E1]">
-          <strong>Need more information?</strong> For questions about our cookie practices or to request a detailed list of cookies used
-          by OliveOps, please contact {legalConfig.legalEmail}.
+      <LegalSection level={2} id="advertising" title="6. Advertising and Marketing Cookies">
+        <p>
+          OliveOps does not currently use advertising cookies, cross-site behavioural advertising, or third-party marketing
+          trackers on the marketing website or application.
         </p>
-      </div>
+        <p>
+          If this changes in the future, this policy will be updated and consent will be obtained where required by law.
+        </p>
+      </LegalSection>
+
+      <LegalSection level={2} id="future" title="7. Optional and Future Technologies">
+        <p>
+          OliveOps may in the future integrate services such as analytics providers, payment processors, or third-party tools that
+          use their own cookies or tracking technologies. Any such integration will be disclosed in an updated version of this policy.
+        </p>
+        <p>
+          You will be notified of material changes before they take effect.
+        </p>
+      </LegalSection>
+
+      <LegalSection level={2} id="browser-controls" title="8. Browser Controls">
+        <p>
+          You can manage cookies and browser storage using your browser settings:
+        </p>
+        <ul className="space-y-2 list-disc list-inside">
+          <li><strong>Delete cookies:</strong> Clear all cookies stored on your device</li>
+          <li><strong>Block cookies:</strong> Prevent websites from setting new cookies</li>
+          <li><strong>Private browsing:</strong> Browse without storing cookies for that session</li>
+          <li><strong>Clear local storage:</strong> Remove cached data stored by web applications</li>
+        </ul>
+        <p>
+          Blocking or deleting essential cookies may prevent the OliveOps application from functioning correctly and will sign
+          you out of your account.
+        </p>
+        <p>
+          For guidance on managing cookies in your browser, refer to your browser's help documentation.
+        </p>
+      </LegalSection>
+
+      <LegalSection level={2} id="changes" title="9. Changes to This Policy">
+        <p>
+          We may update this Cookie Policy to reflect changes in our practices or applicable law. Material changes will be
+          communicated by updating the effective date on this page and, where appropriate, through a notice in the application
+          or by email.
+        </p>
+        <p>
+          Please review this policy periodically.
+        </p>
+      </LegalSection>
     </LegalPage>
   );
 }

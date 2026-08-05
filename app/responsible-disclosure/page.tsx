@@ -39,8 +39,7 @@ export default function ResponsibleDisclosurePage() {
       description="Guidelines for reporting security vulnerabilities in OliveOps"
       estimatedReadTime="4 min read"
       tableOfContents={tableOfContents}
-      currentPage="responsible-disclosure"
-    >
+      currentPage="responsible-disclosure"      contactEmail={legalConfig.securityEmail}    >
       <LegalSection level={2} id="introduction" title="1. Introduction">
         <p>
           OliveOps is committed to security and welcomes contributions from security researchers who follow responsible disclosure
