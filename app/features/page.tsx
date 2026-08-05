@@ -38,6 +38,7 @@ const featureGroups = [
   {
     title: "Job Management",
     icon: "🚜",
+    screenshot: "/jobs.png",
     description:
       "Track every job from kickoff to completion. Assign crews, log field notes, capture before/after photos, and keep customers informed at every stage.",
     highlights: [
