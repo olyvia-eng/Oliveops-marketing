@@ -12,6 +12,7 @@ const featureGroups = [
   {
     title: "CRM & Customer Management",
     icon: "👤",
+    screenshot: "/crmscreenshot.png",
     description:
       "Keep your entire customer database organized with contact details, communication history, notes, and relationship context — all searchable and linked to their properties and jobs.",
     highlights: [
@@ -131,12 +132,18 @@ export default function FeaturesPage() {
                 </ul>
               </div>
 
-              {/* Visual placeholder */}
-              <div className={`bg-slate-50 rounded-2xl border border-slate-200 h-72 flex items-center justify-center ${i % 2 === 1 ? "lg:order-1" : ""}`}>
-                <div className="text-center">
-                  <div className="text-6xl mb-3">{group.icon}</div>
-                  <p className="text-slate-400 text-sm">Feature screenshot coming soon</p>
-                </div>
+              {/* Screenshot or placeholder */}
+              <div className={`rounded-2xl border border-[#E2E8F0] overflow-hidden shadow-lg ${i % 2 === 1 ? "lg:order-1" : ""}`}>
+                {group.screenshot ? (
+                  <img src={group.screenshot} alt={`${group.title} screenshot`} className="w-full block" />
+                ) : (
+                  <div className="bg-slate-50 h-72 flex items-center justify-center">
+                    <div className="text-center">
+                      <div className="text-6xl mb-3">{group.icon}</div>
+                      <p className="text-slate-400 text-sm">Feature screenshot coming soon</p>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           ))}
