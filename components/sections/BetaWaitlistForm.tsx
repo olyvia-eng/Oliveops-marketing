@@ -15,6 +15,7 @@ export default function BetaWaitlistForm() {
     employeeCount: "",
     currentSoftware: "",
     painPoint: "",
+    agreedToTerms: false,
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -24,8 +25,8 @@ export default function BetaWaitlistForm() {
   function handleChange(
     event: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
   ) {
-    const { name, value } = event.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+    const { name, value, type } = event.target as HTMLInputElement;
+    setFormData((prev) => ({ ...prev, [name]: type === "checkbox" ? (event.target as HTMLInputElement).checked : value }));
     setErrors((prev) => ({ ...prev, [name]: "" }));
   }
 
@@ -53,7 +54,7 @@ export default function BetaWaitlistForm() {
 
       setSubmitSuccess(true);
       setSubmitMessage(data.message || "Thanks for joining the OliveOps beta. We\u2019ll be in touch soon.");
-      setFormData({ name: "", companyName: "", email: "", phone: "", contractorType: "", employeeCount: "", currentSoftware: "", painPoint: "" });
+      setFormData({ name: "", companyName: "", email: "", phone: "", contractorType: "", employeeCount: "", currentSoftware: "", painPoint: "", agreedToTerms: false });
     } catch (error) {
       console.error(error);
       setSubmitMessage("Something went wrong. Please try again in a moment.");
@@ -153,6 +154,29 @@ export default function BetaWaitlistForm() {
           {submitMessage}
         </div>
       )}
+
+      <div className="flex items-start gap-3">
+        <input
+          id="agreedToTerms"
+          name="agreedToTerms"
+          type="checkbox"
+          checked={formData.agreedToTerms}
+          onChange={handleChange}
+          className="mt-1 w-4 h-4 rounded border-[#E2E8F0] bg-[#FFFFFF] text-[#6B8E23] focus:ring-2 focus:ring-[#6B8E23] cursor-pointer dark:border-[#334155] dark:bg-[#1E293B]"
+        />
+        <label htmlFor="agreedToTerms" className="text-[#64748B] text-xs leading-relaxed dark:text-[#CBD5E1] cursor-pointer">
+          I have read and agree to the{" "}
+          <a href="/terms" className="text-[#6B8E23] hover:underline font-medium dark:text-[#84A83D]">
+            Terms of Service
+          </a>
+          {" "}and{" "}
+          <a href="/privacy" className="text-[#6B8E23] hover:underline font-medium dark:text-[#84A83D]">
+            Privacy Policy
+          </a>
+          .
+        </label>
+      </div>
+      {errors.agreedToTerms && <p className="text-xs text-red-600 -mt-2">{errors.agreedToTerms}</p>}
 
       <button type="submit" disabled={isSubmitting}
         className="w-full rounded-lg bg-[#6B8E23] px-4 py-3 font-semibold text-white transition-colors hover:bg-[#5A7620] disabled:cursor-not-allowed disabled:opacity-70">
