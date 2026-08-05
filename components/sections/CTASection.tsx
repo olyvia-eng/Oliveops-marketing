@@ -16,13 +16,6 @@ export default function CTASection() {
           <Button
             href="/beta"
             size="lg"
-            className="bg-[#FFFFFF] text-[#0F172A] hover:bg-[#EEF4E3] shadow-lg"
-          >
-            Request Beta
-          </Button>
-          <Button
-            href="/beta"
-            size="lg"
             className="border-2 border-[#6B8E23] text-[#0F172A] hover:bg-[#EEF4E3] dark:border-[#84A83D] dark:text-[#F8FAFC] dark:hover:bg-[#1E293B]"
             variant="outline"
           >
