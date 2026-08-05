@@ -64,6 +64,7 @@ const featureGroups = [
   {
     title: "Scheduling",
     icon: "📅",
+    screenshot: "/schedule.png",
     description:
       "See your entire operation on one calendar. Drag and drop jobs across crews, manage equipment availability, and handle the unexpected when weather or cancellations hit.",
     highlights: [
