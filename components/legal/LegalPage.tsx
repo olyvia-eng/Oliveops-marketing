@@ -31,7 +31,7 @@ export function LegalPage({
   const relatedPages = getRelatedPages(currentPage);
 
   return (
-    <main className="min-h-screen bg-[#FFFFFF] dark:bg-[#0F172A]">
+    <main className="min-h-screen bg-[#FFFFFF] pt-16 dark:bg-[#0F172A]">
       {/* Header with navbar height offset */}
       <div className="border-b border-[#E2E8F0] dark:border-[#334155]">
         <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
